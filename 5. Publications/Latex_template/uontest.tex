@@ -1,0 +1,119 @@
+% UONTEST.TEX - a sample file for the UONTHESIS document style.
+% revised by Colin Johnson (Colin.Johnson@nottingham.ac.uk), 2020-02-18
+%
+\documentclass[11pt]{uonthesis}
+
+\usepackage[titletoc]{appendix}
+\usepackage{apacite,graphicx} % put additional packages here
+\bibliographystyle{apacite}   % bibstyle - any commonly used style is acceptable
+
+\renewcommand{\appendixtocname}{List of appendices}
+
+\title{The Title of Your Dissertation}
+\author{Your Name}
+\prevdegrees{BSc} % if you want to include this
+\university{The University of Nottingham}
+\degree{Master of Science in Difficult Mathematics}
+\date{February 2021}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frontmatter}
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+According to the guidelines the abstract should not exceed 300 words.
+However, it is unlikely that anyone will be counting when you submit.
+If you still wish to do so, then better use Emacs \verb|count-words|
+command.
+\end{abstract}
+
+\begin{acknowledgements}
+It is good to thank here your supervisors and any sponsoring bodies,
+as well as any family, friends, cats, dogs etc. that have been
+supportive during your time at University.
+\end{acknowledgements}
+
+\begin{dedication}
+If you decide to dedicate your thesis to someone, it will be on a
+separate page.
+\end{dedication}
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+
+If it helps the organisation of your thesis, then you can keep each
+chapter in a separate file, and then bring them into the main 
+file using \verb|\input| commands.
+
+Sample text sample text sample text sample text sample text sample
+text sample text sample text sample text sample text sample text
+sample text sample text sample text sample text sample text.
+
+
+\section{First Level Heading}
+
+Sample text sample text sample text sample text sample text sample
+text sample text sample text sample text sample text sample text
+sample text sample text sample text sample text sample text.
+
+\begin{table}
+\caption{Tables usually have caption above.}
+\centering
+\begin{tabular}{c|cc}\hline\hline
+Put & a table & here \\
+\hline
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+1 & 2 & 3 \\
+1 & 2 & 3
+\end{tabular}
+\end{table}
+
+
+\subsection{Second Level Heading}
+
+Sample text sample text sample text sample text sample text sample
+text sample text sample text sample text sample text sample text
+sample text sample text sample text sample text sample text.
+
+\begin{figure}
+\centering
+\includegraphics[width=40mm]{kermit.jpg}
+\caption{You can use {\tt includegraphics} command with the {\tt
+    graphicx} style option to add images.}
+\end{figure}
+
+
+\subsubsection{Third Level Headings Do Not Appear in the Table of Contents}
+
+Sample text sample text sample text sample text sample text sample
+text sample text sample text sample text sample text sample text
+sample text sample text sample text sample text sample text~\cite{Lam94}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{uontest} % filename (before .bib) of your BibTeX database
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+
+\chapter{Supplementary Materials I}
+
+Sample text sample text sample text sample text sample text sample
+text sample text sample text sample text sample text sample text
+sample text sample text sample text sample text sample text.
+
+\chapter{Supplementary Materials II}
+
+Sample text sample text sample text sample text sample text sample
+text sample text sample text sample text sample text sample text
+sample text sample text sample text sample text sample text.
+
+\end{appendices}
+
+
+\end{document}
