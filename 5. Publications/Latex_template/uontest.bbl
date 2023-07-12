@@ -1,0 +1,25 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Lamport%
+}{%
+Lamport%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+Lam94}
+\APACinsertmetastar {%
+Lam94}%
+\begin{APACrefauthors}%
+Lamport, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1994}.
+\newblock
+\APACrefbtitle {{\LaTeX} : A Document Preparation System} {{\LaTeX} : A document preparation system}\ (\PrintOrdinal{Second}\ \BEd).
+\newblock
+\APACaddressPublisher{}{Addison-Wesley}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
