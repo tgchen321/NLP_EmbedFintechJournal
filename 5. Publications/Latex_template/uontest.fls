@@ -69,6 +69,11 @@ INPUT ./intro.tex
 INPUT intro.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT ./literature_review.tex
+INPUT ./literature_review.tex
+INPUT ./literature_review.tex
+INPUT ./literature_review.tex
+INPUT literature_review.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT ./uontest.bbl
 INPUT ./uontest.bbl

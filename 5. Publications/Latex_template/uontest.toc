@@ -8,14 +8,19 @@
 \contentsline {subsubsection}{Doc2Vec Encoding}{4}{}%
 \contentsline {subsubsection}{Universal Sentence Encoder}{4}{}%
 \contentsline {subsubsection}{GloVe}{4}{}%
+\contentsline {subsubsection}{Long-Short Term Memory}{4}{}%
 \contentsline {subsubsection}{BERT}{4}{}%
 \contentsline {subsubsection}{GPT}{4}{}%
 \contentsline {subsubsection}{ELMo}{4}{}%
-\contentsline {section}{\numberline {1.4}Word Similarity and Sentence Similarity}{4}{}%
+\contentsline {section}{\numberline {1.4}Word Similarity and Sentence Similarity}{5}{}%
 \contentsline {subsubsection}{Lexical Relation and WordNet}{5}{}%
-\contentsline {section}{\numberline {1.5}Study Purpose}{5}{}%
-\contentsline {subsection}{\numberline {1.5.1}Second Level Heading}{6}{}%
-\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{6}{}%
-\contentsline {chapter}{References}{7}{}%
-\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{8}{}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{9}{}%
+\contentsline {section}{\numberline {1.5}Semantic Search Engine}{6}{}%
+\contentsline {section}{\numberline {1.6}Study Purpose}{6}{}%
+\contentsline {chapter}{\numberline {2}Literature Review}{8}{}%
+\contentsline {section}{\numberline {2.1}Text Embedding}{8}{}%
+\contentsline {section}{\numberline {2.2}Text Embedding for Search Engine}{9}{}%
+\contentsline {subsection}{\numberline {2.2.1}Second Level Heading}{9}{}%
+\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{9}{}%
+\contentsline {chapter}{References}{10}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{11}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{12}{}%

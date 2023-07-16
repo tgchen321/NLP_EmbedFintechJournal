@@ -58,6 +58,9 @@ Sample text sample text sample text sample text sample text
 \subsubsection{GloVe}
 Sample text sample text sample text sample text sample text
 
+\subsubsection{Long-Short Term Memory}
+Sample text sample text sample text sample text sample text
+
 \subsubsection{BERT}
 Sample text sample text sample text sample text sample text
 
@@ -66,6 +69,7 @@ Sample text sample text sample text sample text sample text
 
 \subsubsection{ELMo}
 Sample text sample text sample text sample text sample text
+
 
 \section{Word Similarity and Sentence Similarity}
 After transforming every word into a vector, similarities between two words are to be calculated. 
@@ -84,9 +88,19 @@ Some Approaches consider different levels of embedding at the same time, such as
 \subsubsection{Lexical Relation and WordNet}
 Sample text sample text sample text sample text sample text
 
+\section{Semantic Search Engine}
+Techniques about search engines are a good starting point when it comes to matching a sentence to related articles.
+Search engines, especially full-text search engines, enable users to look for relative information in a huge full-text database.
+Among the tasks in a search process, the comparison between keyword and candidate results can be improved with text embedding techniques to retrieve semantic information from keyword and candidate documents, which is known as the semantic search engine.
+
+Semantic search engines enable users to provide a sentence or description instead of just a keyword for querying, while text embedding methods are applied normally to both query texts and candidate documents to evaluate the similarity between their embedded vectors.
+Semantic search can better catch the contextual meaning within texts and understand the user's intent.
+Some advanced techniques such as WordNet can also be applied to the search engine to improve the accuracy and coverage of querying results and can serve partly as query expansion that expands a search query with its synonym words or semantic relative words.
+
+
 \section{Study Purpose}
-This project is about building relations between sentences and scientific articles in the finTech field and comparing the performance of using different text embedding techniques.
-We want to discover and develop a text embedding method that can best describe sentences in FinTech research articles and yield the best result of relating citation sentences and scientific articles.
+This project is about building a semantic search engine for scientific articles in the fintech field and comparing the performance of using different text embedding techniques.
+We want to discover and develop a text embedding method that can best describe sentences in FinTech research articles and yield the best result of finding related scientific articles by a citation sentence.
 This project aims to help academics find proper references for their statement when writing literature reviews and introductions of scientific reports.
 
 Citations are commonly used in writing scientific articles to acknowledge the source of a statement in our work.
@@ -95,4 +109,4 @@ It could be relatively hard work to find an appropriate source for this idea.
 Hence, we are proposing a method to find the best math articles for our writing.
 We want to look for articles that mainly describe similar thoughts to the statement we write down in a certain domain in scientific writing.
 Among all the processes in the natural language processing pipeline, the text embedding techniques would be mostly focused on in this research, which is to convert contents into meaningful numbers and vectors for algorithms to compute, transform and compare.
-We decide to apply this research in the fintech field and answer the question “What text embedding techniques can best represent a scientific sentence to derive an academic writing citation-hinting system in the fintech field?”
+We decide to apply this research in the fintech field and answer the question “What text embedding techniques can best represent a scientific sentence to derive a semantic search engine for the fintech academic articles?”
