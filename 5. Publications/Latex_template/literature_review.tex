@@ -7,12 +7,21 @@ They also observed a higher accuracy from a higher dimension of word vector and 
 
 [Lee et al., 2018] utilized SentiWordNet 3.0 to analyse the effect of several negative emotions in hotel reviews.
 SentiWordNet 3.0 [Baccianella et al., 2010] provided sentiment analysis as classification tasks and word embedding with a frequency-weighted bag-of-words model and the help of WordNet corpus.
-
 [Onan, 2020] presented a sentiment analysis approach to product reviews from Twitter.
 This deep-learning-based method applied TF-IDF weighted GloVe to the CNN-LSTM architecture to do word embedding and outperformed conventional deep-learning methods.
 
 \section{Text Embedding for Search Engine}
 With the increase of documents and web pages, traditional keywords-based search engines are thought to be powerless to correctly look for users' requirements.
-Text embedding techniques are applied to search engines to provide machine-readable web pages and semantic annotations to the algorithm to yield a more accurate search result[Aghaei et al., 2022].
+Text embedding techniques are applied to search engines to provide machine-readable web pages and semantic annotations to the algorithm to yield a more accurate search result.
+Many websites are applying text embedding to their search engines, including Google Search, Microsoft's Bing Search, Amazon Search and many e-commerce websites and platforms.
+Not to confuse the search engine using text embedding and the search engine using semantic web search language, in this paper, we refer to the semantic search as the searching approach with text embedding or other semantic retrieval techniques. 
 
-[Azad et al., 2022] proposed a semantic search over linked data
+Regarding the search engines for scientific articles, [Eisenberg et al., 2017] proposed a semantic search for Biogeochemical literature that undergoes paper research by comparing the concepts extracted from queries and academic literature.
+However, the concept extraction component in the workflow of this research is annotated by domain experts, which can be done automatically by NLP approaches mentioned in the future directions chapter.
+[Fang et al., 2018] performed a biomedical article-searching approach called Semantic Sequential Dependence Model (SSDM) that combined semantic information retrieval techniques and the traditional SDM model.
+Word embedding techniques of the Neural Network Language Model (NNLM)[bengio et al., 2003], Log-Bilinear Language Model (LBL)[Mnih et al., 2007] and Word2vec are applied to the literature corpus to find synonyms by KNN classification algorithm and generate a domain-specific thesaurus.
+The thesaurus is then utilized to extend query keywords and the SDM played an important role in the combination strategy of the extended keywords for further comparison to documents.
+
+Compare to the keyword embedding approaches, applying sentence embedding or other wider-level embedding techniques to search engines can better preserve information for query but be more challenging at the same time.
+[Palangi et al., 2016] managed to embed semantic information at a sentence level by using LSTM-RNN (Long Short-Term Memory - Recurrent Neural Network) framework to do web document retrieval, and compare the summarisation sentence vector and query sentence vector to yield the best searching result.
+

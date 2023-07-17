@@ -19,8 +19,8 @@
 \contentsline {chapter}{\numberline {2}Literature Review}{8}{}%
 \contentsline {section}{\numberline {2.1}Text Embedding}{8}{}%
 \contentsline {section}{\numberline {2.2}Text Embedding for Search Engine}{9}{}%
-\contentsline {subsection}{\numberline {2.2.1}Second Level Heading}{9}{}%
-\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{9}{}%
-\contentsline {chapter}{References}{10}{}%
-\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{11}{}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{12}{}%
+\contentsline {subsection}{\numberline {2.2.1}Second Level Heading}{10}{}%
+\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{10}{}%
+\contentsline {chapter}{References}{11}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{12}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{13}{}%
