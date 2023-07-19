@@ -1,4 +1,4 @@
-\section{(About Citation)}
+\section{Citation in Scientific Articles}
 
 Citations are used to demonstrate research background, existing techniques and pieces of evidence for a statement, playing a critical role in scientific writing.
 Authors can properly acknowledge the source of information of a statement and avoid plagiarism with an accurate citation.
@@ -14,8 +14,6 @@ When looking for reference papers, keywords are commonly used in most academic d
 The authors would then review the results of papers from search engines to evaluate their relevance to our research and reliability.
 It could cost a huge amount of time and effort to go through full papers, not to mention that the academic database and search engines might miss some relevant papers.
 
-Some academic databases come with citation recommendation tools, which provide relevant articles that share the same category with or are similar to our research.
-Citation recommendation tools would have a bias towards published journals, impact factors, times being referred to, and the availability of the journal if it's open to everyone or subscription-only.
 
 \section{Natural Language Processing}
 
@@ -30,63 +28,12 @@ NLP manages to overcome the challenges of processing human language mentioned ab
 Advanced applications of NLP, such as sentiment analysis, text clustering, text summarisation, human language generation and improving automatic translation, provide solutions and assistance to a wide range of tasks. 
 It reduces our workloads and time-spending and helps improve the interaction between humans and computers by mimicking human language to express in an easy-understanding way for most o the people not only programmers.
 
-\section{Text Embedding}
+\section{Text Embedding and Similarity}
 Text embedding, also known as text vectorisation and text featurisation, aims to extract information from words and sentences and represent the semantics and meaning of words by numbers and vectors.
 The process of extracting information has been through significant development since the year 2000.
 Various techniques have been proposed, including naive ways of bag-of-words model, TF-IDF encoding, LSA encoding, Word2Vec embeddings and GloVe, along with more advanced methods like BERT and GPT, which we are familiar with and commonly use today.
-
-Text embedding methods can be roughly classified by the level of encoding unit (embed in a word, sentence, or article level), supervised or unsupervised, similarity measurement (such as Euclidean distance or cosine similarity) and other specific technique support such as term-based embedding in particular fields and graph-based embedding.
-Some advanced methods such as ELMo[1] and GPT[2] use autoregressive models and BERT[3] uses an autoencoder to do bidirectional context encoding.
-A more complex structure of neural networks and a bigger training corpus could derive a better and more robust model but a huge amount of time to train models as well.
-Hence, another improvement of embedding methods would be the trade-off between better performance and reasonable training time.
-
-\subsubsection{TF-IDF}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{LSA Encoding}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{Word2Vec Encoding}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{Doc2Vec Encoding}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{Universal Sentence Encoder}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{GloVe}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{Long-Short Term Memory}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{BERT}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{GPT}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{ELMo}
-Sample text sample text sample text sample text sample text
-
-
-\section{Word Similarity and Sentence Similarity}
-After transforming every word into a vector, similarities between two words are to be calculated. 
-A pair of similar words should act similarly in most of the features we extracted, while a good similarity metric can aggregate the difference in every feature into a single value, which is comparable between each pair of words.
+After transforming every word into a vector, similarities between two words are to be calculated.
 The measurements of word similarity are used in word-embedding techniques to evaluate the similarity between prediction value and real value to update parameters in NN model training.
-Besides Euclidean distance and cosine similarity as semantic similarity measurements mentioned in Chapter 1.2, WordNet also provides path similarity to evaluate similarities of words with a lexical hierarchical structure.
-
-Sentence similarity measurements are more complex and various compared to word similarity since sentences can be considered as combinations of words.
-The most straightforward approach is to aggregate words in the sentence as a representation to compare with other sentences, which can be seen as a baseline measurement of sentence similarity.
-The steps are to take averages of every word in each sentence, yield a single vector for each sentence and calculate the Euclidean distance or cosine similarity between two sentences with average vectors.
-This approach, however, doesn't consider the order of words, while it can have a huge effect on a sentence's meaning when the word order differs.
-Several algorithms are proposed to map a sentence into a vector and calculate the similarity with the derived value directly from the embedding process.
-Much of them are extended from an existing word embedding method to apply to sentences or even documents, such as Word2Vec, Sent2Vec and Doc2Vec.
-Some Approaches consider different levels of embedding at the same time, such as word embedding and sentence embedding of BERT.
-
-\subsubsection{Lexical Relation and WordNet}
-Sample text sample text sample text sample text sample text
 
 \section{Semantic Search Engine}
 Techniques about search engines are a good starting point when it comes to matching a sentence to related articles.

@@ -1,4 +1,40 @@
 \section{Text Embedding}
+Text embedding methods can be roughly classified by the level of encoding unit (embed in a word, sentence, or article level), supervised or unsupervised, similarity measurement (such as Euclidean distance or cosine similarity) and other specific technique support such as term-based embedding in particular fields and graph-based embedding.
+Some advanced methods such as ELMo~\cite{peters2018} and GPT~\cite{brown2020} use autoregressive models and BERT~\cite{niven2019} uses an autoencoder to do bidirectional context encoding.
+A more complex structure of neural networks and a bigger training corpus could derive a better and more robust model but a huge amount of time to train models as well.
+Hence, another improvement of embedding methods would be the trade-off between better performance and reasonable training time.
+
+\subsubsection{TF-IDF}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{LSA Encoding}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{Word2Vec Encoding}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{Doc2Vec Encoding}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{Universal Sentence Encoder}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{GloVe}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{Long-Short Term Memory}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{BERT}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{GPT}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{ELMo}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{Applications of Text Embedding Techniques}
 Text embedding techniques are improved for specific objectives, fields and styles and applied to a wide range of tasks, including various issues of tweets analysis[Mottaghinia et al., 2020], visualisation in the biomedical field [Oubenali et al., 2022] and sentiment analysis on movie reviews [Sivakumar et al., 2021].
 
 [Khatua et al., 2019] identified crisis-related tweets during the 2014 Ebola and 2016 Zika outbreaks with pre-trained Word2Vec and GloVe models.
@@ -9,6 +45,24 @@ They also observed a higher accuracy from a higher dimension of word vector and 
 SentiWordNet 3.0 [Baccianella et al., 2010] provided sentiment analysis as classification tasks and word embedding with a frequency-weighted bag-of-words model and the help of WordNet corpus.
 [Onan, 2020] presented a sentiment analysis approach to product reviews from Twitter.
 This deep-learning-based method applied TF-IDF weighted GloVe to the CNN-LSTM architecture to do word embedding and outperformed conventional deep-learning methods.
+
+
+\subsection{Text Similarity}
+A pair of similar words should act similarly in most of the features we extracted, while a good similarity metric can aggregate the difference in every feature into a single value, which is comparable between each pair of words.
+Besides Euclidean distance and cosine similarity as semantic similarity measurements mentioned above, WordNet also provides path similarity to evaluate similarities of words with a lexical hierarchical structure.
+
+Sentence similarity measurements are more complex and various compared to word similarity since sentences can be considered as combinations of words.
+The most straightforward approach is to aggregate words in the sentence as a representation to compare with other sentences, which can be seen as a baseline measurement of sentence similarity.
+The steps are to take averages of every word in each sentence, yield a single vector for each sentence and calculate the Euclidean distance or cosine similarity between two sentences with average vectors.
+This approach, however, doesn't consider the order of words, while it can have a huge effect on a sentence's meaning when the word order differs.
+
+Several algorithms are proposed to map a sentence into a vector and calculate the similarity with the derived value directly from the embedding process.
+Much of them are extended from an existing word embedding method to apply to sentences or even documents, such as Word2Vec, Sent2Vec and Doc2Vec.
+Some Approaches consider different levels of embedding at the same time, such as word embedding and sentence embedding of BERT.
+
+\subsubsection{Lexical Relation and WordNet}
+Sample text sample text sample text sample text sample text
+
 
 \section{Text Embedding for Search Engine}
 With the increase of documents and web pages, traditional keywords-based search engines are thought to be powerless to correctly look for users' requirements.
@@ -25,3 +79,21 @@ The thesaurus is then utilized to extend query keywords and the SDM played an im
 Compare to the keyword embedding approaches, applying sentence embedding or other wider-level embedding techniques to search engines can better preserve information for query but be more challenging at the same time.
 [Palangi et al., 2016] managed to embed semantic information at a sentence level by using LSTM-RNN (Long Short-Term Memory - Recurrent Neural Network) framework to do web document retrieval, and compare the summarisation sentence vector and query sentence vector to yield the best searching result.
 
+
+\section{Searching-Based Citation Recommendation}
+
+Some academic databases come with citation recommendation tools, which provide relevant articles that share the same category with or are similar to our research.
+Citation recommendation tools would yield different results resulting from not only different algorithms they used but also candidate papers' published journals, impact factors, times being referred to, and the availability if it's open to everyone or subscription-only.
+
+Citation recommendation methods are always built with three main stages: (1) Generate candidate citations from the publication database (2) Create a recommendation list by ranking the candidate citations (3) Evaluate the accuracy of our recommendation system.[MA 2020]
+Text embedding techniques can be included generally in step 1: generation of candidate citation, that is, applying text embedding to filter out candidate citations from the publication database that better relate to keywords provided by users or meet users' needs.
+
+Since the diversity of terms and patterns between scientific articles in different domains, researchers would tend to train a specific model with their domain data or use transfer learning to fine-tune the model parameters.
+[Tshitoyan et al., 2019] used modified Word2Vec embedding to successfully capture complex materials science concepts, without any additional chemistry knowledge insertion, and extract knowledge and relationship from scientific literature.
+[Zhang et al., 2022] used 15 text representation models, including 6 term-based methods, 2 word embedding methods, 3 sentence embedding methods, 2 document embedding methods and 2 BERT-based methods, to construct an article recommendation system in the biomedical field.
+They found BERT and BioSenVec, a Sent2Vec model trained on PubMed corpus, outperformed most of the online and offline citation recommendation systems and an improvement of BERT-based methods after fine-tuning to learn users' preferences.
+
+[Wang et al., 2022] proposed a sentence-level citation recommendation system called SenCite that used CNN to recognise candidate citation sentences and FastText as the word embedding method to extract information from texts, without summarising an article into sentences.
+They evaluated the performance of SenCite with several evaluation metrics such as modified reciprocal rank, average precision and normalized discounted cumulative gain and human experts verification.
+The SenCite is shown to outperform most of the embedding methods and yield a comparable accuracy to BERT.
+The human experts also stated that SenCite provided the best top-1 citation recommendation.
