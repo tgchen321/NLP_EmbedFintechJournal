@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.12)  19 JUL 2023 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.20)  20 JUL 2023 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -99,12 +99,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-No file uontest.toc.
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./uontest.toc)
 \tf@toc=\write3
 \openout3 = `uontest.toc'.
 
-[2
+ [2
 
 ] [3] [4]
 Chapter 1.
@@ -128,11 +127,63 @@ LaTeX Warning: Citation `niven2019' undefined on input line 3.
 
 [5
 
-] [6] [7] [8] [9])
+] [6]
+
+LaTeX Warning: Citation `mottaghinia2021' undefined on input line 38.
+
+
+LaTeX Warning: Citation `oubenali2022' undefined on input line 38.
+
+
+LaTeX Warning: Citation `sivakumar2021' undefined on input line 38.
+
+
+LaTeX Warning: Citation `khatua2019' undefined on input line 40.
+
+
+LaTeX Warning: Citation `lee2017' undefined on input line 44.
+
+
+LaTeX Warning: Citation `baccianella2010' undefined on input line 45.
+
+
+LaTeX Warning: Citation `onan2021' undefined on input line 46.
+
+[7]
+
+LaTeX Warning: Citation `eisenberg2017' undefined on input line 73.
+
+
+LaTeX Warning: Citation `fang2018' undefined on input line 75.
+
+
+LaTeX Warning: Citation `bengio2000' undefined on input line 76.
+
+
+LaTeX Warning: Citation `mnih2007' undefined on input line 76.
+
+[8]
+
+LaTeX Warning: Citation `palangi2016' undefined on input line 80.
+
+
+LaTeX Warning: Citation `ma2020' undefined on input line 88.
+
+
+LaTeX Warning: Citation `tshitoyan2019' undefined on input line 92.
+
+
+LaTeX Warning: Citation `zhang2022' undefined on input line 93.
+
+[9]
+
+LaTeX Warning: Citation `wang2022' undefined on input line 96.
+
+)
 
 LaTeX Warning: Citation `Lam94' undefined on input line 90.
 
-[10] (./uontest.bbl [11]
+(./uontest.bbl [10]
 ./uontest.bbl:23: Undefined control sequence.
 <argument> \@listctr 
                      
@@ -190,8 +241,8 @@ I'm forgetting what you said and using zero instead.
 ./uontest.bbl:32: Undefined control sequence.
 <argument> \@listctr 
                      
-l.32 \bibitem{Lam94}
-                    
+l.32 \bibitem{mottaghinia2021}
+                              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -201,19 +252,308 @@ and I'll forget about whatever was undefined.
 ./uontest.bbl:32: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.32 \bibitem{Lam94}
+l.32 \bibitem{mottaghinia2021}
+                              
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:35: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.35 \bibitem{oubenali2022}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:35: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.35 \bibitem{oubenali2022}
+                           
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:38: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.38 \bibitem{sivakumar2021}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:38: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.38 \bibitem{sivakumar2021}
+                            
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:41: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.41 \bibitem{khatua2019}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:41: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.41 \bibitem{khatua2019}
+                         
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:44: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.44 \bibitem{lee2017}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:44: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.44 \bibitem{lee2017}
+                      
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:47: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.47 \bibitem{baccianella2010}
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:47: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.47 \bibitem{baccianella2010}
+                              
+I'm forgetting what you said and using zero instead.
+
+[11
+
+]
+./uontest.bbl:50: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.50 \bibitem{onan2021}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:50: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.50 \bibitem{onan2021}
+                       
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:53: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.53 \bibitem{eisenberg2017}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:53: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.53 \bibitem{eisenberg2017}
+                            
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:56: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.56 \bibitem{fang2018}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:56: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.56 \bibitem{fang2018}
+                       
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:59: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.59 \bibitem{bengio2000}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:59: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.59 \bibitem{bengio2000}
+                         
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:62: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.62 \bibitem{mnih2007}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:62: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.62 \bibitem{mnih2007}
+                       
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:65: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.65 \bibitem{palangi2016}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:65: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.65 \bibitem{palangi2016}
+                          
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:68: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.68 \bibitem{ma2020}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:68: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.68 \bibitem{ma2020}
+                     
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:71: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.71 \bibitem{tshitoyan2019}
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:71: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.71 \bibitem{tshitoyan2019}
+                            
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:74: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.74 \bibitem{zhang2022}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:74: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.74 \bibitem{zhang2022}
+                        
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:77: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.77 \bibitem{wang2022}
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:77: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.77 \bibitem{wang2022}
+                       
+I'm forgetting what you said and using zero instead.
+
+./uontest.bbl:80: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.80 \bibitem{Lam94}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./uontest.bbl:80: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.80 \bibitem{Lam94}
                     
 I'm forgetting what you said and using zero instead.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 33.
+(Font)              <10.95> on input line 81.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 81.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 33.
-) [12
-
-]
+(Font)              <6> on input line 81.
+) [12]
 Appendix A.
 [13
 
@@ -235,18 +575,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 1954 strings out of 475236
- 30843 string characters out of 5768534
- 1924238 words of memory out of 5000000
- 23207 multiletter control sequences out of 15000+600000
- 564690 words of font info for 58 fonts, out of 8000000 for 9000
+ 1991 strings out of 475236
+ 31311 string characters out of 5768534
+ 1925238 words of memory out of 5000000
+ 23241 multiletter control sequences out of 15000+600000
+ 564998 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,505b,221s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uontest.pdf (18 pages, 154134 bytes).
+ 57i,7n,65p,523b,263s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on uontest.pdf (18 pages, 174874 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
