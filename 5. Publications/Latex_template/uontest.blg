@@ -1,56 +1,15 @@
-This is BibTeX, Version 0.99d (TeX Live 2023)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: uontest.aux
-The style file: IEEEtran.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: uontest.bib
--- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
--- http://www.michaelshell.org/tex/ieeetran/bibtex/
--- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-
-Done.
-You've used 20 entries,
-            4087 wiz_defined-function locations,
-            950 strings with 11607 characters,
-and the built_in function-call counts, 17774 in all, are:
-= -- 1474
-> -- 479
-< -- 161
-+ -- 265
-- -- 92
-* -- 862
-:= -- 2546
-add.period$ -- 41
-call.type$ -- 20
-change.case$ -- 21
-chr.to.int$ -- 357
-cite$ -- 20
-duplicate$ -- 1261
-empty$ -- 1301
-format.name$ -- 104
-if$ -- 4167
-int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 214
-newline$ -- 83
-num.names$ -- 20
-pop$ -- 474
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 2
-skip$ -- 1392
-stack$ -- 0
-substring$ -- 912
-swap$ -- 1094
-text.length$ -- 42
-text.prefix$ -- 0
-top$ -- 5
-type$ -- 20
-warning$ -- 0
-while$ -- 79
-width$ -- 22
-write$ -- 223
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'uontest.blg'
+[132] biber-MSWIN64:340> INFO - === 
+[176] Biber.pm:419> INFO - Reading 'uontest.bcf'
+[308] Biber.pm:979> INFO - Found 20 citekeys in bib section 0
+[326] Biber.pm:4419> INFO - Processing section 0
+[341] Biber.pm:4610> INFO - Looking for bibtex file 'uontest.bib' for section 0
+[386] bibtex.pm:1713> INFO - LaTeX decoding ...
+[432] bibtex.pm:1519> INFO - Found BibTeX data source 'uontest.bib'
+[628] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[628] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[631] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[631] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[649] bbl.pm:660> INFO - Writing 'uontest.bbl' with encoding 'UTF-8'
+[665] bbl.pm:763> INFO - Output to uontest.bbl

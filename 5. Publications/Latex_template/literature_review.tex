@@ -37,13 +37,13 @@ Sample text sample text sample text sample text sample text
 \subsubsection{Applications of Text Embedding Techniques}
 Text embedding techniques are improved for specific objectives, fields and styles and applied to a wide range of tasks, including various issues of tweets analysis\cite{mottaghinia2021}, visualisation in the biomedical field\cite{oubenali2022} and sentiment analysis on movie reviews\cite{sivakumar2021}.
 
-\cite{khatua2019} identified crisis-related tweets during the 2014 Ebola and 2016 Zika outbreaks with pre-trained Word2Vec and GloVe models.
+Khatua et al.\cite{khatua2019} identified crisis-related tweets during the 2014 Ebola and 2016 Zika outbreaks with pre-trained Word2Vec and GloVe models.
 They found a better classification performance to have a small domain-specific corpus from tweets and scholarly abstracts from PubMed participated in the model.
 They also observed a higher accuracy from a higher dimension of word vector and skip-gram model than CBOW.
 
-\cite{lee2017} utilized SentiWordNet 3.0 to analyse the effect of several negative emotions in hotel reviews.
+Lee et al.\cite{lee2017} utilized SentiWordNet 3.0 to analyse the effect of several negative emotions in hotel reviews.
 SentiWordNet 3.0\cite{baccianella2010} provided sentiment analysis as classification tasks and word embedding with a frequency-weighted bag-of-words model and the help of WordNet corpus.
-\cite{onan2021} presented a sentiment analysis approach to product reviews from Twitter.
+Onan\cite{onan2021} presented a sentiment analysis approach to product reviews from Twitter.
 This deep-learning-based method applied TF-IDF weighted GloVe to the CNN-LSTM architecture to do word embedding and outperformed conventional deep-learning methods.
 
 
@@ -70,14 +70,14 @@ Text embedding techniques are applied to search engines to provide machine-reada
 Many websites are applying text embedding to their search engines, including Google Search, Microsoft's Bing Search, Amazon Search and many e-commerce websites and platforms.
 Not to confuse the search engine using text embedding and the search engine using semantic web search language, in this paper, we refer to the semantic search as the searching approach with text embedding or other semantic retrieval techniques. 
 
-Regarding the search engines for scientific articles, \cite{eisenberg2017} proposed a semantic search for Biogeochemical literature that undergoes paper research by comparing the concepts extracted from queries and academic literature.
+Regarding the search engines for scientific articles, Eisenberg et al.\cite{eisenberg2017} proposed a semantic search for Biogeochemical literature that undergoes paper research by comparing the concepts extracted from queries and academic literature.
 However, the concept extraction component in the workflow of this research is annotated by domain experts, which can be done automatically by NLP approaches mentioned in the future directions chapter.
-\cite{fang2018} performed a biomedical article-searching approach called Semantic Sequential Dependence Model (SSDM) that combined semantic information retrieval techniques and the traditional SDM model.
+Fang et al.\cite{fang2018} performed a biomedical article-searching approach called Semantic Sequential Dependence Model (SSDM) that combined semantic information retrieval techniques and the traditional SDM model.
 Word embedding techniques of the Neural Network Language Model(NNLM)\cite{bengio2000}, Log-Bilinear Language Model(LBL)\cite{mnih2007} and Word2vec are applied to the literature corpus to find synonyms by KNN classification algorithm and generate a domain-specific thesaurus.
 The thesaurus is then utilized to extend query keywords and the SDM played an important role in the combination strategy of the extended keywords for further comparison to documents.
 
 Compare to the keyword embedding approaches, applying sentence embedding or other wider-level embedding techniques to search engines can better preserve information for query but be more challenging at the same time.
-\cite{palangi2016} managed to embed semantic information at a sentence level by using LSTM-RNN (Long Short-Term Memory - Recurrent Neural Network) framework to do web document retrieval, and compare the summarisation sentence vector and query sentence vector to yield the best searching result.
+Palangi et al.\cite{palangi2016} managed to embed semantic information at a sentence level by using LSTM-RNN (Long Short-Term Memory - Recurrent Neural Network) framework to do web document retrieval, and compare the summarisation sentence vector and query sentence vector to yield the best searching result.
 
 
 \section{Searching-Based Citation Recommendation}
@@ -89,11 +89,11 @@ Citation recommendation methods are always built with three main stages: (1) Gen
 Text embedding techniques can be included generally in step 1: generation of candidate citation, that is, applying text embedding to filter out candidate citations from the publication database that better relate to keywords provided by users or meet users' needs.
 
 Since the diversity of terms and patterns between scientific articles in different domains, researchers would tend to train a specific model with their domain data or use transfer learning to fine-tune the model parameters.
-\cite{tshitoyan2019} used modified Word2Vec embedding to successfully capture complex materials science concepts, without any additional chemistry knowledge insertion, and extract knowledge and relationship from scientific literature.
-\cite{zhang2022} used 15 text representation models, including 6 term-based methods, 2 word embedding methods, 3 sentence embedding methods, 2 document embedding methods and 2 BERT-based methods, to construct an article recommendation system in the biomedical field.
-They found BERT and BioSenVec, a Sent2Vec model trained on PubMed corpus, outperformed most of the online and offline citation recommendation systems and an improvement of BERT-based methods after fine-tuning to learn users' preferences.
+Tshitoyan et al.\cite{tshitoyan2019} used modified Word2Vec embedding to successfully capture complex materials science concepts, without any additional chemistry knowledge insertion, and extract knowledge and relationship from scientific literature.
+Zhang et al.\cite{zhang2022} used 15 text representation models, including 6 term-based methods, 2 word embedding methods, 3 sentence embedding methods, 2 document embedding methods and 2 BERT-based methods, to construct an article recommendation system in the biomedical field.
+They found BERT and BioSenVec, a Sent2Vec model trained on PubMed corpus, outperformed most of the online and offline citation recommendation systems and an improvement in BERT-based methods after fine-tuning to learn users' preferences.
 
-\cite{wang2022} proposed a sentence-level citation recommendation system called SenCite that used CNN to recognise candidate citation sentences and FastText as the word embedding method to extract information from texts, without summarising an article into sentences.
+Wang et al.\cite{wang2022} proposed a sentence-level citation recommendation system called SenCite that used CNN to recognise candidate citation sentences and FastText as the word embedding method to extract information from texts, without summarising an article into sentences.
 They evaluated the performance of SenCite with several evaluation metrics such as modified reciprocal rank, average precision and normalized discounted cumulative gain and human experts verification.
 The SenCite is shown to outperform most of the embedding methods and yield a comparable accuracy to BERT.
 The human experts also stated that SenCite provided the best top-1 citation recommendation.

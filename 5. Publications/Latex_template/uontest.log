@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.20)  20 JUL 2023 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.20)  23 JUL 2023 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -20,25 +20,289 @@ Document Class: uonthesis 2002/7/20 University of Nottingham Thesis Class
 \c@subparagraph=\count191
 \c@figure=\count192
 \c@table=\count193
-) (c:/texlive/2023/texmf-dist/tex/latex/appendix/appendix.sty
-Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count194
-\c@@ppsavesec=\count195
-\c@@ppsaveapp=\count196
-) (c:/texlive/2023/texmf-dist/tex/latex/apacite/apacite.sty
-Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count197
-\bibleftmargin=\skip48
-\bibindent=\skip49
-\bibparsep=\skip50
-\bibitemsep=\skip51
-\biblabelsep=\skip52
-) (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+) (c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+ (c:/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (c:/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (c:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (c:/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count194
+) (c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+) (c:/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (c:/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (c:/texlive/2023/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count195
+ (c:/texlive/2023/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (c:/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (c:/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count196
+\c@listtotal=\count197
+\c@listcount=\count198
+\c@liststart=\count199
+\c@liststop=\count266
+\c@citecount=\count267
+\c@citetotal=\count268
+\c@multicitecount=\count269
+\c@multicitetotal=\count270
+\c@instcount=\count271
+\c@maxnames=\count272
+\c@minnames=\count273
+\c@maxitems=\count274
+\c@minitems=\count275
+\c@citecounter=\count276
+\c@maxcitecounter=\count277
+\c@savedcitecounter=\count278
+\c@uniquelist=\count279
+\c@uniquename=\count280
+\c@refsection=\count281
+\c@refsegment=\count282
+\c@maxextratitle=\count283
+\c@maxextratitleyear=\count284
+\c@maxextraname=\count285
+\c@maxextradate=\count286
+\c@maxextraalpha=\count287
+\c@abbrvpenalty=\count288
+\c@highnamepenalty=\count289
+\c@lownamepenalty=\count290
+\c@maxparens=\count291
+\c@parenlevel=\count292
+\blx@tempcnta=\count293
+\blx@tempcntb=\count294
+\blx@tempcntc=\count295
+\c@blx@maxsection=\count296
+\blx@maxsegment@0=\count297
+\blx@notetype=\count298
+\blx@parenlevel@text=\count299
+\blx@parenlevel@foot=\count300
+\blx@sectionciteorder@0=\count301
+\blx@sectionciteorderinternal@0=\count302
+\blx@entrysetcounter=\count303
+\blx@biblioinstance=\count304
+\labelnumberwidth=\skip48
+\labelalphawidth=\skip49
+\biblabelsep=\skip50
+\bibitemsep=\skip51
+\bibnamesep=\skip52
+\bibinitsep=\skip53
+\bibparsep=\skip54
+\bibhang=\skip55
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language87
+\c@mincomprange=\count305
+\c@maxcomprange=\count306
+\c@mincompwidth=\count307
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count308
+\c@savedafterword=\count309
+\c@annotator=\count310
+\c@savedannotator=\count311
+\c@author=\count312
+\c@savedauthor=\count313
+\c@bookauthor=\count314
+\c@savedbookauthor=\count315
+\c@commentator=\count316
+\c@savedcommentator=\count317
+\c@editor=\count318
+\c@savededitor=\count319
+\c@editora=\count320
+\c@savededitora=\count321
+\c@editorb=\count322
+\c@savededitorb=\count323
+\c@editorc=\count324
+\c@savededitorc=\count325
+\c@foreword=\count326
+\c@savedforeword=\count327
+\c@holder=\count328
+\c@savedholder=\count329
+\c@introduction=\count330
+\c@savedintroduction=\count331
+\c@namea=\count332
+\c@savednamea=\count333
+\c@nameb=\count334
+\c@savednameb=\count335
+\c@namec=\count336
+\c@savednamec=\count337
+\c@translator=\count338
+\c@savedtranslator=\count339
+\c@shortauthor=\count340
+\c@savedshortauthor=\count341
+\c@shorteditor=\count342
+\c@savedshorteditor=\count343
+\c@labelname=\count344
+\c@savedlabelname=\count345
+\c@institution=\count346
+\c@savedinstitution=\count347
+\c@lista=\count348
+\c@savedlista=\count349
+\c@listb=\count350
+\c@savedlistb=\count351
+\c@listc=\count352
+\c@savedlistc=\count353
+\c@listd=\count354
+\c@savedlistd=\count355
+\c@liste=\count356
+\c@savedliste=\count357
+\c@listf=\count358
+\c@savedlistf=\count359
+\c@location=\count360
+\c@savedlocation=\count361
+\c@organization=\count362
+\c@savedorganization=\count363
+\c@origlocation=\count364
+\c@savedoriglocation=\count365
+\c@origpublisher=\count366
+\c@savedorigpublisher=\count367
+\c@publisher=\count368
+\c@savedpublisher=\count369
+\c@language=\count370
+\c@savedlanguage=\count371
+\c@origlanguage=\count372
+\c@savedoriglanguage=\count373
+\c@pageref=\count374
+\c@savedpageref=\count375
+\shorthandwidth=\skip56
+\shortjournalwidth=\skip57
+\shortserieswidth=\skip58
+\shorttitlewidth=\skip59
+\shortauthorwidth=\skip60
+\shorteditorwidth=\skip61
+\locallabelnumberwidth=\skip62
+\locallabelalphawidth=\skip63
+\localshorthandwidth=\skip64
+\localshortjournalwidth=\skip65
+\localshortserieswidth=\skip66
+\localshorttitlewidth=\skip67
+\localshortauthorwidth=\skip68
+\localshorteditorwidth=\skip69
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count376
+\c@textcitetotal=\count377
+\c@textcitemaxnames=\count378
+\c@biburlbigbreakpenalty=\count379
+\c@biburlbreakpenalty=\count380
+\c@biburlnumpenalty=\count381
+\c@biburlucpenalty=\count382
+\c@biburllcpenalty=\count383
+\biburlbigskip=\muskip17
+\biburlnumskip=\muskip18
+\biburlucskip=\muskip19
+\biburllcskip=\muskip20
+\c@smartand=\count384
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2021/12/06 v1.3f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count385
+\c@bbx:relatedtotal=\count386
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2021/12/06 v1.3f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count387
+\c@cbx@tempcntb=\count388
+\c@cbx@tempcntc=\count389
+\c@cbx@tempcntd=\count390
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (c:/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-06-30 L3 programming layer (loader) 
+ (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count391
+\l__pdf_internal_box=\box51
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2023-06-30 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (c:/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+)) (c:/texlive/2023/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count392
+\c@@ppsavesec=\count393
+\c@@ppsaveapp=\count394
+) (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -53,44 +317,53 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@width=\dimen142
 ) (c:/texlive/2023/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count198
-\l__pdf_internal_box=\box51
-) (./uontest.aux)
+)
+\@quotelevel=\count395
+\@quotereset=\count396
+ (./uontest.aux)
 \openout1 = `uontest.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-\c@maskedRefs=\count199
- (c:/texlive/2023/texmf-dist/tex/latex/apacite/english.apc
-File: english.apc 2013/07/21 v6.03 apacite language file
-LaTeX Info: Redefining \BPBI on input line 129.
-LaTeX Info: Redefining \BHBI on input line 130.
-) (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `uontest.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'uontest.bbl' found.
+ (./uontest.bbl)
+Package biblatex Info: Reference section=0 on input line 24.
+Package biblatex Info: Reference segment=0 on input line 24.
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count266
+\scratchcounter=\count397
 \scratchdimen=\dimen143
 \scratchbox=\box52
-\nofMPsegments=\count267
-\nofMParguments=\count268
+\nofMPsegments=\count398
+\nofMParguments=\count399
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count269
+\MPscratchCnt=\count400
 \MPscratchDim=\dimen144
-\MPnumerator=\count270
-\makeMPintoPDFobject=\count271
+\MPnumerator=\count401
+\makeMPintoPDFobject=\count402
 \everyMPtoPDFconversion=\toks19
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -100,8 +373,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) [1
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./uontest.toc)
-\tf@toc=\write3
-\openout3 = `uontest.toc'.
+\tf@toc=\write4
+\openout4 = `uontest.toc'.
 
  [2
 
@@ -109,457 +382,44 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Chapter 1.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 50.
+(Font)              using `OT1/cmr/bx/n' instead on input line 51.
 
 (./intro.tex [1
 
 ] [2] [3]) [4]
 Chapter 2.
-(./literature_review.tex
-
-LaTeX Warning: Citation `peters2018' undefined on input line 3.
-
-
-LaTeX Warning: Citation `brown2020' undefined on input line 3.
-
-
-LaTeX Warning: Citation `niven2019' undefined on input line 3.
-
-[5
-
-] [6]
-
-LaTeX Warning: Citation `mottaghinia2021' undefined on input line 38.
-
-
-LaTeX Warning: Citation `oubenali2022' undefined on input line 38.
-
-
-LaTeX Warning: Citation `sivakumar2021' undefined on input line 38.
-
-
-LaTeX Warning: Citation `khatua2019' undefined on input line 40.
-
-
-LaTeX Warning: Citation `lee2017' undefined on input line 44.
-
-
-LaTeX Warning: Citation `baccianella2010' undefined on input line 45.
-
-
-LaTeX Warning: Citation `onan2021' undefined on input line 46.
-
-[7]
-
-LaTeX Warning: Citation `eisenberg2017' undefined on input line 73.
-
-
-LaTeX Warning: Citation `fang2018' undefined on input line 75.
-
-
-LaTeX Warning: Citation `bengio2000' undefined on input line 76.
-
-
-LaTeX Warning: Citation `mnih2007' undefined on input line 76.
-
-[8]
-
-LaTeX Warning: Citation `palangi2016' undefined on input line 80.
-
-
-LaTeX Warning: Citation `ma2020' undefined on input line 88.
-
-
-LaTeX Warning: Citation `tshitoyan2019' undefined on input line 92.
-
-
-LaTeX Warning: Citation `zhang2022' undefined on input line 93.
-
-[9]
-
-LaTeX Warning: Citation `wang2022' undefined on input line 96.
-
-)
-
-LaTeX Warning: Citation `Lam94' undefined on input line 90.
-
-(./uontest.bbl [10]
-./uontest.bbl:23: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.23 \bibitem{peters2018}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:23: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.23 \bibitem{peters2018}
-                         
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:26: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.26 \bibitem{brown2020}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:26: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.26 \bibitem{brown2020}
-                        
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:29: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.29 \bibitem{niven2019}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:29: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.29 \bibitem{niven2019}
-                        
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:32: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.32 \bibitem{mottaghinia2021}
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:32: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.32 \bibitem{mottaghinia2021}
-                              
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:35: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.35 \bibitem{oubenali2022}
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:35: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.35 \bibitem{oubenali2022}
-                           
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:38: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.38 \bibitem{sivakumar2021}
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:38: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.38 \bibitem{sivakumar2021}
-                            
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:41: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.41 \bibitem{khatua2019}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:41: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.41 \bibitem{khatua2019}
-                         
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:44: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.44 \bibitem{lee2017}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:44: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.44 \bibitem{lee2017}
-                      
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:47: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.47 \bibitem{baccianella2010}
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:47: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.47 \bibitem{baccianella2010}
-                              
-I'm forgetting what you said and using zero instead.
-
-[11
-
-]
-./uontest.bbl:50: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.50 \bibitem{onan2021}
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:50: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.50 \bibitem{onan2021}
-                       
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:53: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.53 \bibitem{eisenberg2017}
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:53: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.53 \bibitem{eisenberg2017}
-                            
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:56: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.56 \bibitem{fang2018}
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:56: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.56 \bibitem{fang2018}
-                       
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:59: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.59 \bibitem{bengio2000}
-                         
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:59: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.59 \bibitem{bengio2000}
-                         
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:62: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.62 \bibitem{mnih2007}
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:62: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.62 \bibitem{mnih2007}
-                       
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:65: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.65 \bibitem{palangi2016}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:65: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.65 \bibitem{palangi2016}
-                          
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:68: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.68 \bibitem{ma2020}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:68: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.68 \bibitem{ma2020}
-                     
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:71: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.71 \bibitem{tshitoyan2019}
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:71: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.71 \bibitem{tshitoyan2019}
-                            
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:74: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.74 \bibitem{zhang2022}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:74: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.74 \bibitem{zhang2022}
-                        
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:77: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.77 \bibitem{wang2022}
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:77: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.77 \bibitem{wang2022}
-                       
-I'm forgetting what you said and using zero instead.
-
-./uontest.bbl:80: Undefined control sequence.
-<argument> \@listctr 
-                     
-l.80 \bibitem{Lam94}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./uontest.bbl:80: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.80 \bibitem{Lam94}
-                    
-I'm forgetting what you said and using zero instead.
-
+(./literature_review.tex [5
+
+] [6] [7] [8] [9])
+Overfull \hbox (3.77222pt too wide) in paragraph at lines 96--56
+[]\OT1/cmr/m/n/10.95 Wang et al.[19] pro-posed a sentence-level ci-ta-tion rec-om-men-da-tion sys-tem called SenCite
+ []
+
+[10]
+Chapter 3.
+(./material.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 81.
+(Font)              <10.95> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 81.
+(Font)              <8> on input line 9.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 81.
-) [12]
-Appendix A.
+(Font)              <6> on input line 9.
+ [11
+
+]) [12]
+Overfull \hbox (2.24527pt too wide) in paragraph at lines 100--100
+[]\OT1/cmr/m/n/10.95 A. Khatua, A. Khatua, and E. Cam-bria, ``A tale of two epi-demics: Con-tex-tual word2vec
+ []
+
 [13
+
+] [14] [15]
+Appendix A.
+[16
 
 ]
 Appendix B.
-[14
+[17
 
 ] (./uontest.aux)
  ***********
@@ -570,23 +430,23 @@ L3 programming layer <2023-06-30>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
+Package logreq Info: Writing requests to 'uontest.run.xml'.
+\openout1 = `uontest.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 1991 strings out of 475236
- 31311 string characters out of 5768534
+ 9731 strings out of 475236
+ 188262 string characters out of 5768534
  1925238 words of memory out of 5000000
- 23241 multiletter control sequences out of 15000+600000
- 564998 words of font info for 59 fonts, out of 8000000 for 9000
+ 30893 multiletter control sequences out of 15000+600000
+ 565299 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,523b,263s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uontest.pdf (18 pages, 174874 bytes).
+ 66i,7n,81p,1165b,1255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on uontest.pdf (21 pages, 192512 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

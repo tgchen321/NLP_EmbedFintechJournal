@@ -2,10 +2,11 @@
 % revised by Colin Johnson (Colin.Johnson@nottingham.ac.uk), 2020-02-18
 %
 \documentclass[11pt]{uonthesis}
-
+\usepackage[style=ieee,backend=biber]{biblatex}
 \usepackage[titletoc]{appendix}
-\usepackage{apacite,graphicx,indentfirst} % put additional packages here
-\bibliographystyle{IEEEtran}   % bibstyle - any commonly used style is acceptable
+\usepackage{graphicx,indentfirst} % put additional packages here
+\addbibresource{uontest.bib}
+%\bibliographystyle{ieee}   % bibstyle - any commonly used style is acceptable
 
 \renewcommand{\appendixtocname}{List of appendices}
 \setlength{\parindent}{2em}
@@ -14,7 +15,7 @@
 \title{(temp) Using Word Embedding for Citation Recommendation 
 in FinTech Scientific Articles}
 \author{Ting-Chun Chen}
-\prevdegrees{BSc} % if you want to include this
+\prevdegrees{} % if you want to include this
 \university{The University of Nottingham}
 \degree{Master of Science in Data Science}
 \date{September 2023}
@@ -53,6 +54,10 @@ supportive during your time at University.
 \chapter{Literature Review}
 \input{literature_review}
 
+\chapter{Material and Method}
+\input{material}
+
+
 
 
 % \begin{table}
@@ -90,7 +95,8 @@ text sample text sample text sample text sample text sample text
 sample text sample text sample text sample text sample text~\cite{Lam94}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliography{uontest} % filename (before .bib) of your BibTeX database
+%\bibliography{uontest} % filename (before .bib) of your BibTeX database
+\printbibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}

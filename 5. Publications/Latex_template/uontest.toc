@@ -21,8 +21,9 @@
 \contentsline {subsubsection}{Lexical Relation and WordNet}{8}{}%
 \contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{8}{}%
 \contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{9}{}%
-\contentsline {subsection}{\numberline {2.4.1}Second Level Heading}{10}{}%
-\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{10}{}%
-\contentsline {chapter}{References}{11}{}%
-\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{13}{}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{14}{}%
+\contentsline {chapter}{\numberline {3}Material and Method}{11}{}%
+\contentsline {section}{\numberline {3.1}Dataset}{11}{}%
+\contentsline {subsection}{\numberline {3.1.1}Second Level Heading}{12}{}%
+\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{12}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{16}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{17}{}%
