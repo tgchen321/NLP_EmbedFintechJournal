@@ -32,7 +32,7 @@ def BatchPDF2text(targetFolder, journal):
 
 
 if __name__ == "__main__":
-	targetFolder = "test"
+	targetFolder = "IEEEaccess"
 	journal = "IEEEaccess"
 	BatchMovePDF(targetFolder)
 	BatchPDF2text(targetFolder, journal)
