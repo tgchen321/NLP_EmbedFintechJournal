@@ -1,43 +1,42 @@
 # import PyPDF2 as pdf
 import fitz, pickle, re
-########### keep edit: line 81
+#### sustainability one file test OK
+#### next: run testing file
 
 def pdf2text(IFileName, journal):
-    pdf_document = fitz.open(IFileName)
-
+    PDFDocument = fitz.open(IFileName)
+    
     plainText = ""
-    references = [{}]
-    referenceStart = False
-    for pageNum in range(pdf_document.page_count):
-        page = pdf_document.load_page(pageNum)
+    references = [{"id": 0, "title": "", "journal": ""}]
+    section = "main" # "main" -> "reference" -> "done"
+    longTitle = False
+    for pageNum in range(PDFDocument.page_count):
+        page = PDFDocument.load_page(pageNum)
 
-        # plainText += "\n\n-------- page: " + str(pageNum) + ", " + str(len(page.get_text("blocks"))) + " blocks --------\n\n"
-        # print("-- PAGE " + str(pageNum) + "--")
+        print("-- PAGE " + str(pageNum) + "--")
         # print(page.get_text("dict")["width"])
         # print(page.get_text("dict")["height"])
         for block in page.get_text("dict")["blocks"]:
-
+            # print("-- block " + str(block["number"]) + "--")
             # escape images
             if block["type"] == 1: continue
 
-            # # main content
+            # main content
             for line in block["lines"]:
-                thisLine = False
+                thisLine = ""
                 for span in line["spans"]:
-                    if MainContentCheck(span, journal): 
-                        plainText += span["text"]
-                        thisLine = True
-                        lastChar = span["text"][-1]
-                    elif not referenceStart: 
-                        referenceStart = ReferenceCheck(span, journal)
-                    else:
-                        references = FormatReference(span, references, journal)
+                    section = SectionCheck(section, span, journal)
+                    if section == "done": break
+                    if section == "main" and MainContentCheck(span, journal):
+                            thisLine += span["text"]
+
+                    elif section == "reference": 
+                        references, longTitle = FormatReference(span, longTitle, references, journal)
+                        section = ReferenceEnd(span, journal)
                         
                 # hyphenation of words (break into 2 parts)
-                if thisLine: 
-                    if lastChar == "-": plainText = plainText[0:-1]
-                    else: plainText += " "
-
+                if len(thisLine) > 0: 
+                    plainText += EndOfLine(thisLine)
             # plainText += "\n"
 
             # debug: whole picture of PDF contents
@@ -45,10 +44,14 @@ def pdf2text(IFileName, journal):
             #     plainText += "# " + key + "\n"
             #     plainText += str(value)
             #     plainText += "\n"
-            
-    text_file = open(IFileName[:-4] + ".txt", "w", encoding="utf-8")
-    text_file.write(plainText)
-    text_file.close()
+
+    with open(IFileName[:-4] + ".txt", "w", encoding="utf-8") as textFile:
+        textFile.write(plainText)
+    with open(IFileName[:-4] + ".pkl", "wb") as pkl:
+        pickle.dump(references, pkl)
+    # unpickling
+    # with open(IFileName[:-4] + ".pkl", "rb") as pkl:
+    #     references = pickle.load(pkl)
 
 
 def MainContentCheck(span, journal):
@@ -57,52 +60,163 @@ def MainContentCheck(span, journal):
             return False
         if span["font"] == "TimesLTStd-Roman" or span["font"] == "TimesLTStd-Italic":
             return True
-
-def ReferenceCheck(span, journal):
-    if journal == "IEEEaccess":
-        if round(span["size"], 3) == 8.966 and span["font"] == "FormataOTF-Bold" and span["color"] == 29358 and span["text"] == "REFERENCES":
+    
+    if journal == "sustain2016":
+        if (span["size"] > 9.5 and span["size"] < 10.5) and span["font"] == "URWPalladioL-Roma":
+            # print("#### pass content check")
             return True
-        else: return False
 
-def FormatReference(span, references, journal):
-    text = span["text"]
-    number = re.search(r"z[[0-9]+\]", text)
-    startTitle = text.find("‘‘")
-    endTitle = text.find(",’’")
+    return False
 
-    if journal == "IEEEaccess":    
-        # add new reference
-        if number is not None:
-            if int(number[0][1:-1]) is not len(references):
-                print ("######### ERROR: incorrect reference order")
-                return 0
-            references.append({"id": len(references), "title": "", "journal": ""})
-        
-        # add reference title
-        ##################### start here, create 2 flags for title start and title end, in case of long titles more than 3 lines
-        if startTitle > 0:
-            if endTitle > 0:
-                references[-1]["title"] += text[startTitle+2: endTitle]
+
+def SectionCheck(section, span, journal):
+    scan = ""
+    if journal == "IEEEaccess":
+        if round(span["size"], 3) == 8.966 and span["font"] == "FormataOTF-Bold" and span["color"] == 29358:
+            # connect several lines of chapter title
+            if section[-1] == "-": 
+                scan = section[:-1] + span["text"]
             else: 
-                if text[-1] == "-": 
-                    references[-1]["title"] += text[startTitle+2: -1]
-                else: 
-                    references[-1]["title"] += text[startTitle+2: ]
-                    references[-1]["title"] += " "
-        elif endTitle > 0:
-            references[-1]["title"] += text[0: endTitle]
+                scan = span["text"]
+            
+            if "APPENDIX" in scan:
+                return "appendix-"
+            if scan == "REFERENCES":
+                return "reference-"   
+        elif section[-1] == "-":
+            return section[:-1]
+    
+    if journal == "sustain2016":
+        if round(span["size"], 3) == 9.963 and span["font"] == "URWPalladioL-Bold":
+            if section[-1] == "-": 
+                scan = section[:-1] + span["text"]
+            else: 
+                scan = span["text"]
+            
+            if "Appendix" in scan:
+                return "appendix-"
+            if scan == "References":
+                print("#### REFERENCE START")
+                return "reference-"   
+        elif section[-1] == "-":
+            return section[:-1]
+    return section
+
+
+
+
+def ReferenceEnd(span, journal):
+    if journal == "IEEEaccess":
+        if round(span["size"], 3) == 7.97 and span["font"] == "FormataOTFMd":
+            return "done"
+    return "reference"
+
+
+def FormatReference(span, longTitle, references, journal):
+    text = span["text"]
+    number = None
+    startTitle = -1
+    endTitle = -1
+    journalName = ""
+    addJournal = False
+    addTitle = False
+
+    if journal == "IEEEaccess":
+        if (span["font"] != "TimesLTStd-Roman" or span["font"] != "TimesLTStd-Italic") and round(span["size"], 3) != 7.582:
+            return references, longTitle
+
+        if (span["origin"][0] > 278 and span["origin"][0] < 305) or span["origin"][0] < 44: 
+            number = re.search(r"\[[0-9]+\]", text)
+
+        if number is not None: 
+            number = int(number[0][1:-1])
+
+        startTitle = text.find("‘‘")
+        endTitle = text.find("’’")
+        addTitle = True
+
+        if span["font"] == "TimesLTStd-Italic":
+            journalName = EndOfLine(text)
+        if len(journalName) > 0: addJournal = True
+    
+    if journal == "sustain2016":
+        if "URWPalladioL" not in span["font"] or span["size"] < 8.5 or span["size"] > 9.5:
+            return references, longTitle
+
+        if round(span["origin"][0], 3) == 36:
+            number = int(text[:-1])
+            # print("new ref: " + str(number))
         
-        # add journal title
-        if span["font"] == "TimesLTStd-Italic" and round(span["size"], 3) == 7.582:
-            references[-1]["journal"] += text
-
-
+        elif span["font"] == "URWPalladioL-Roma" and len(references[-1]["journal"]) == 0:
+            addTitle = True
+            # print("add title: " + text)
+            if not longTitle:
+                startTitle = text.find(". ")
+                endTitle = text[startTitle+2:].find(". ")
+                if endTitle > 0: endTitle += startTitle + 2
+            else: 
+                endTitle = text.find(". ")
             
-            
+            # print("---start from: " + str(startTitle))
+            # print("---to: " + str(endTitle))
+        
+        elif span["font"] == "URWPalladioL-Ital":
+            # print("add journal: " + text)
+            addJournal = True
+            journalName = EndOfLine(text)
+            longTitle = False
 
 
 
-pdf2text("test/Abbas-2021-Securing Genetic Algorithm Enabled.pdf", "IEEEaccess")
+    # add new reference
+    if number is not None:
+        if number != references[-1]["id"] + 1:
+            print ("######### ERROR: incorrect reference order")
+            print("detected reference number: " + str(number) + ", len(reference list): " + str(len(references)))
+            return 0
+        else:
+            references.append({"id": len(references), "title": "", "journal": ""})
+        # print (references[-1])
+    
+    # add reference title
+    if addTitle:
+        if longTitle:
+            if endTitle >= 0:
+                references[-1]["title"] += text[0: endTitle]
+                longTitle = False
+            else: 
+                references[-1]["title"] += EndOfLine(text)
+                longTitle = True
+        else:
+            if startTitle >= 0 and endTitle >= 0:
+                references[-1]["title"] += text[startTitle+2: endTitle]
+                longTitle = False
+            elif startTitle >= 0 and endTitle < 0:
+                if startTitle + 2 < len(text): 
+                    references[-1]["title"] += EndOfLine(text[startTitle+2:])
+                longTitle = True
+        # print(references[-1]["title"])
+    
+    # add journal name
+    if addJournal: references[-1]["journal"] += journalName
+
+    # print("long title: " + str(longTitle))
+    return references, longTitle
+
+def EndOfLine(text):
+    if text[-1] == "-": 
+        text = text[:-1]
+    else:
+        text += " "
+    return text
+
+
+pdf2text("test_sustain2016/Adamashvili-2021-Blockchain-Based Wine Supply.pdf", "sustain2016")
+with open("test_sustain2016/Adamashvili-2021-Blockchain-Based Wine Supply.pkl", "rb") as pkl:
+    references = pickle.load(pkl)
+for ref in references:
+    for key, value in ref.items():
+        print(key + "\t" + str(value))
                             
 
 
