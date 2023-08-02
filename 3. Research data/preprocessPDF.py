@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from myPDFTool import pdf2text
+from myPDFTool import pdf2text, CitationSentence
 
 
 # move PDFs out from folders
@@ -31,13 +31,29 @@ def BatchPDF2text(targetFolder, journal):
 		print("Plain: \t" + file[0:-4] + "...")
 
 
+def BatchCitationSentence(targetFolder):
+	citeCount = {}
+	for file in os.listdir(targetFolder):
+		if not file.endswith((".txt")): continue
+		
+		citeCount[file[0:-4]] = CitationSentence(str(Path(targetFolder).joinpath(file)))
+		print("Sentences: \t" + file[0:-4] + "...")
+	return citeCount
+
+
 if __name__ == "__main__":
-	targetFolder = "tmp"
-	journal = "IEEEaccess"
+	targetFolder = "IEEEaccess"
+	journal = targetFolder
 	# BatchMovePDF(targetFolder)
-	BatchPDF2text(targetFolder, journal)
-
-
+	# BatchPDF2text(targetFolder, journal)
+	dictionary = BatchCitationSentence(targetFolder)
+	count = dictionary.values()
+	for key, value in dictionary.items():
+		print(key + ":\t" + str(value))
+	print("Average citation sentences: " + str(sum(count)/len(count)))
+	print("Maximum citation sentences: " + str(max(count)))
+	print("Minimum citation sentences: " + str(min(count)))
+	
 
 
 # # convert PDFs to plain texts

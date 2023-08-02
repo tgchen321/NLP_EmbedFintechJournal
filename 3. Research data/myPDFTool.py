@@ -1,7 +1,6 @@
 # import PyPDF2 as pdf
-import fitz, pickle, re
-#### sustainability one file test OK
-#### next: run testing file
+import fitz, pickle, re, os
+####### manage to put the main content of the reference paper and its citaiton sentences in the same place
 
 def pdf2text(IFileName, journal):
     PDFDocument = fitz.open(IFileName)
@@ -13,7 +12,7 @@ def pdf2text(IFileName, journal):
     for pageNum in range(PDFDocument.page_count):
         page = PDFDocument.load_page(pageNum)
 
-        print("-- PAGE " + str(pageNum) + "--")
+        # print("-- PAGE " + str(pageNum) + "--")
         # print(page.get_text("dict")["width"])
         # print(page.get_text("dict")["height"])
         for block in page.get_text("dict")["blocks"]:
@@ -44,6 +43,7 @@ def pdf2text(IFileName, journal):
             #     plainText += "# " + key + "\n"
             #     plainText += str(value)
             #     plainText += "\n"
+        # if pageNum == 1: break
 
     with open(IFileName[:-4] + ".txt", "w", encoding="utf-8") as textFile:
         textFile.write(plainText)
@@ -56,12 +56,15 @@ def pdf2text(IFileName, journal):
 
 def MainContentCheck(span, journal):
     if journal == "IEEEaccess":
-        if round(span["size"], 3) != 9.963 or span["color"] != 0:
+        if round(span["size"], 3) != 9.963:
+            # print(span["color"])
+            # print(span["text"])
             return False
         if span["font"] == "TimesLTStd-Roman" or span["font"] == "TimesLTStd-Italic":
+            # print("#### pass content check")
             return True
     
-    if journal == "sustain2016":
+    if journal == "Sustainability":
         if (span["size"] > 9.5 and span["size"] < 10.5) and span["font"] == "URWPalladioL-Roma":
             # print("#### pass content check")
             return True
@@ -86,7 +89,7 @@ def SectionCheck(section, span, journal):
         elif section[-1] == "-":
             return section[:-1]
     
-    if journal == "sustain2016":
+    if journal == "Sustainability":
         if round(span["size"], 3) == 9.963 and span["font"] == "URWPalladioL-Bold":
             if section[-1] == "-": 
                 scan = section[:-1] + span["text"]
@@ -96,12 +99,11 @@ def SectionCheck(section, span, journal):
             if "Appendix" in scan:
                 return "appendix-"
             if scan == "References":
-                print("#### REFERENCE START")
+                # print("#### REFERENCE START")
                 return "reference-"   
         elif section[-1] == "-":
             return section[:-1]
     return section
-
 
 
 
@@ -139,7 +141,7 @@ def FormatReference(span, longTitle, references, journal):
             journalName = EndOfLine(text)
         if len(journalName) > 0: addJournal = True
     
-    if journal == "sustain2016":
+    if journal == "Sustainability":
         if "URWPalladioL" not in span["font"] or span["size"] < 8.5 or span["size"] > 9.5:
             return references, longTitle
 
@@ -167,7 +169,6 @@ def FormatReference(span, longTitle, references, journal):
             longTitle = False
 
 
-
     # add new reference
     if number is not None:
         if number != references[-1]["id"] + 1:
@@ -175,7 +176,7 @@ def FormatReference(span, longTitle, references, journal):
             print("detected reference number: " + str(number) + ", len(reference list): " + str(len(references)))
             return 0
         else:
-            references.append({"id": len(references), "title": "", "journal": ""})
+            references.append({"id": len(references), "title": "", "journal": "", "sentences": []})
         # print (references[-1])
     
     # add reference title
@@ -203,6 +204,7 @@ def FormatReference(span, longTitle, references, journal):
     # print("long title: " + str(longTitle))
     return references, longTitle
 
+
 def EndOfLine(text):
     if text[-1] == "-": 
         text = text[:-1]
@@ -211,106 +213,149 @@ def EndOfLine(text):
     return text
 
 
-pdf2text("test_sustain2016/Adamashvili-2021-Blockchain-Based Wine Supply.pdf", "sustain2016")
-with open("test_sustain2016/Adamashvili-2021-Blockchain-Based Wine Supply.pkl", "rb") as pkl:
-    references = pickle.load(pkl)
-for ref in references:
-    for key, value in ref.items():
-        print(key + "\t" + str(value))
-                            
+def CitationSentence(IFileName):
+    count = 0
+    with open(IFileName, "rb") as textFile:
+        text = str(textFile.read())
+    with open(IFileName[0:-4] + ".pkl", "rb") as pkl:
+        references = pickle.load(pkl)
+    sentences = re.split(r'(?<=\D)\.(?=.)|(?<=\d)\.(?=\D)', text)
+    citeSents = []
+    for sentence in sentences:
+
+        # citation numbers
+        citeNums = []
+        citations = re.findall(r'\[[0-9]+\]', sentence)
+        if len(citations) > 0:
+            for num in citations:
+                citeNums.append(int(num[1:-1]))
+        groupOfCites = re.findall(r'\[[0-9]+[-][0-9]+\]', sentence)
+        if len(groupOfCites) > 0:
+            for group in groupOfCites:
+                tmp = group.split("-")
+                start = int(tmp[0][1:])
+                end = int(tmp[1][:-1])
+                citeNums += list(range(start, end+1))
+
+        # extract citation sentences
+        if len(citeNums) > 0:
+            # debug: convert special characters utf-8
+            sentence = Unicode2Str(sentence)
+            if "\\" in sentence: print(sentence)
+
+            # serialisation
+            citeSents.append(sentence)
+
+            # match bibliography (dictionary) and citation sentence
+            removeBrackets = re.sub(r'\[[0-9]+[-]?[0-9]*\]', '', sentence)
+            # print(removeBrackets)
+            for citeNum in citeNums:
+                # print(citeNum)
+                if citeNum >= len(references): continue
+                if "sentences" not in references[citeNum].keys():
+                    references[citeNum]["sentences"] = []
+                references[citeNum]["sentences"].append(removeBrackets)
+                count += 1
+
+    with open(IFileName[:-4] + "_citeSents.pkl", "wb") as pkl:
+        pickle.dump(citeSents, pkl)
+    with open(IFileName[:-4] + ".pkl", "wb") as pkl:
+        pickle.dump(references, pkl)
+    
+    return count
 
 
-# def CheckContentStart(block, journal):
-#     if journal == "IEEEaccess":
-#         if "ABSTRACT" in block[4]:
-#             print("Start content")
-#             return True
-#         else: return False
+def MatchRefFile(IFileName, repoFolder):
 
-# def CheckEscape(block, journal):
-#     if journal == "IEEEaccess":
-#         if block[5] == 0: 
-#             # print("Escape:\theader-1")
-#             return True
-#         if block[5] == 1: 
-#             # print("Escape:\theader-2")
-#             return True
-#         if "VOLUME" in block[4]:
-#             # print("Escape:\tfooter")
-#             return True
-#         if block[4][0:6] == "FIGURE":
-#             # print("Escape:\tfigure")
-#             return True
-#         if block[4][0:5] == "TABLE":
-#             # print("Escape:\ttable")
-#             return True
-#         if "The associate editor coordinating" in block[4]:
-#             # print("Escape:\teditor review (1st page left bottom corner)-1")
-#             return True
-#         if "approving it for publication was" in block[4]:
-#             # print("Escape:\teditor review (1st page left bottom corner)-2")
-#             return True
-#         # if block[4][1:9] == "https://" or block[4][1:8] == "http://":
-#         #     print("Escape:\tfootnote www address")
-#         #     return True
-#         if "<image: " in block[4]:
-#             # print("Escape:\timage label")
-#             return True
-#         else: return False
+    dirList = {}
+    for scanFile in os.listdir(repoFolder):
+        if os.path.isdir(os.path.join(repoFolder, scanFile)):
+            dirList[scanFile.lower()] = scanFile
+    # print(dirList)
 
-# def pdf2text(fileName):
+    with open(IFileName, "rb") as pkl:
+        references = pickle.load(pkl)
+    for ref in references:
+        folder = ref["journal"].lower().replace(" ", "")
+        # print(folder)
+        filename = ref["title"].lower()
+        if folder not in dirList.keys(): continue
+        print("find: " + filename)
+        for scanner in os.listdir(os.path.join(repoFolder, dirList[folder])):
+            if re.findall(r'[\S]+' + filename[0:20] + r'[\S\s]+' + ".txt", scanner.lower()):
+                print(scanner)
+    ############ keep edit here
 
-#     # check file name
-#     if fileName[-4:] == ".pdf": 
-#         fileName = fileName[:-4]
-#         #print(fileName)
 
-#     # read pdf
-#     reader = pdf.PdfReader(fileName + ".pdf")
-#     plainText = ""
-#     for pageNum in range(len(reader.pages)):
-#         #print(pagepageNum)
-#         page = reader.pages[pageNum]
-#         page = RemoveSentence(page, "")
-#         plainText += "\n\n\n----------------------------------------------------\n\n\n"
-#         plainText += page.extract_text()
 
-#     # save to txt
-#     text_file = open(fileName + ".txt", "w", encoding="utf-8")
-#     text_file.write(plainText)
-#     text_file.close()
 
-# crop page to remove footer and header
-# def CropPDF(IFileName, OFileName, journal):
 
-#     pdfReader = pdf.PdfReader(IFileName)
-#     pdfWriter = pdf.PdfWriter()
+def Unicode2Str(str):
+    str = re.sub(r'\\xc2\\x[ab][0-9a-f]', '', str)
+    str = re.sub(r'\\xc3\\x[8a][0-6]', 'a', str)
+    str = re.sub(r'\\xc3\\x[8a]7', 'c', str)
+    str = re.sub(r'\\xc3\\x[8a][89ab]', 'e', str)
+    str = re.sub(r'\\xc3\\x[8a][c-f]', 'i', str)
+    str = re.sub(r'\\xc3\\x[9b][0]', 'd', str)
+    str = re.sub(r'\\xc3\\x[9b][1]', 'n', str)
+    str = re.sub(r'\\xc3\\x[9b][2-68]', 'o', str)
+    str = re.sub(r'\\xc3\\x[9b]7', '', str)
+    str = re.sub(r'\\xc3\\x[9b][9a-c]', 'u', str)
+    str = re.sub(r'\\xc3\\x[9b]d', 'y', str)
+    str = re.sub(r'\\xc3\\x[9b]e', 'p', str)
+    str = re.sub(r'\\xc3\\x[9b]f', 's', str)
+    str = re.sub(r'\\xc4\\x8[0-5]', 'a', str)
+    str = re.sub(r'\\xc4\\x8[6-9a-d]', 'c', str)
+    str = re.sub(r'\\xc4\\x8[ef]', 'd', str)
+    str = re.sub(r'\\xc4\\x9[01]', 'd', str)
+    str = re.sub(r'\\xc4\\x9[2-9ab]', 'e', str)
+    str = re.sub(r'\\xc4\\x9[c-f]', 'g', str)
+    str = re.sub(r'\\xc4\\xa[0-3]', 'g', str)
+    str = re.sub(r'\\xc4\\xa[4-7]', 'h', str)
+    str = re.sub(r'\\xc4\\xa[89a-f]', 'i', str)
+    str = re.sub(r'\\xc4\\xb[01]', 'i', str)
+    str = re.sub(r'\\xc4\\xb[23]', '', str)
+    str = re.sub(r'\\xc4\\xb[45]', 'j', str)
+    str = re.sub(r'\\xc4\\xb[6-8]', 'k', str)
+    str = re.sub(r'\\xc4\\xb[9a-f]', 'l', str)
+    str = re.sub(r'\\xc5\\x8[0-2]', 'l', str)
+    str = re.sub(r'\\xc5\\x8[3-9ab]', 'n', str)
+    str = re.sub(r'\\xc5\\x8[c-f]', 'o', str)
+    str = re.sub(r'\\xc5\\x9[01]', 'o', str)
+    str = re.sub(r'\\xc5\\x9[23]', 'oe', str)
+    str = re.sub(r'\\xc5\\x9[4-9]', 'r', str)
+    str = re.sub(r'\\xc5\\x9[a-f]', 's', str)
+    str = re.sub(r'\\xc5\\xa[01]', 's', str)
+    str = re.sub(r'\\xc5\\xa[2-7]', 't', str)
+    str = re.sub(r'\\xc5\\xa[89a-f]', 'u', str)
+    str = re.sub(r'\\xc5\\xb[0-3]', 'u', str)
+    str = re.sub(r'\\xc5\\xb[45]', 'w', str)
+    str = re.sub(r'\\xc5\\xb[6-8]', 'y', str)
+    str = re.sub(r'\\xc5\\xb[9a-e]', 'z', str)
+    str = re.sub(r'\\xc[bc]\\x[89ab][0-9a-f]', '', str)
+    str = re.sub(r'\\xe2\\x80\\x9[89ab]', '\'', str)
+    str = re.sub(r'\\xe2\\x80\\x9[c-f]', '\'\'', str)
+    str = re.sub(r'\\xe2\\x80\\x9[1-5]', '\'\'', str)
+    str = str.replace("\\xef\\xac\\x80", "ff")
+    str = str.replace("\\xef\\xac\\x81", "fi")
+    str = str.replace("\\xef\\xac\\x82", "fl")
+    str = str.replace("\\xef\\xac\\x83", "ffi")
+    str = str.replace("\\xef\\xac\\x84", "ffl")
+    str = re.sub(r'\\xef\\xac\\x8[56]', 'st', str)
+    return str
 
-#     # (footer height, header height)
-#     mapJournalheights = {"IEEEaccess": (0.3, 0.3)} 
 
-#     page = pdfReader.pages[0]
-#     mediaBox = page.mediabox
-#     x1, y1 = mediaBox.lower_left
-#     x2, y2 = mediaBox.upper_right
-#     footerHeight = round(float(y2 - y1) * mapJournalheights[journal][0], 3)
-#     headerHeight = round(float(y2 - y1) * mapJournalheights[journal][1], 3)
+# pdf2text("test/Nizamani-2021-A Novel Hybrid Textual-Graphical.pdf", "IEEEaccess")
+# with open("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.pkl", "rb") as pkl:
+#     references = pickle.load(pkl)
+# for ref in references:
+#     for key, value in ref.items():
+#         print(key + "\t" + str(value))
 
-#     for pageNum in range(len(pdfReader.pages)):
-#         page = pdfReader.pages[pageNum]
+# CitationSentence("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.txt")
+# with open("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.pkl", "rb") as pkl:
+#     CiteSents = pickle.load(pkl)
+# for sent in CiteSents:
+#     print(sent)
 
-#         page.mediabox.lower_left = (x1, float(y1) + footerHeight)
-#         page.mediabox.upper_right = (x2, float(y2) - headerHeight)
-#         #print("cropped lowerleft: " + str(page.mediabox.lower_left))
-#         pdfWriter.add_page(page)
-
-#     with open(OFileName, 'wb') as outputFile:
-#         pdfWriter.write(outputFile)
-
-# def RemoveSentence(page, key):
-#     if len(key) == 0: return page
-#     for line in page:
-#         if key in line:
-#             print("!! remove sentence: " + line)
-#             page.remove(line)
-#     return page
+MatchRefFile("IEEEaccess/Abbas-2021-Securing Genetic Algorithm Enabled.pkl", "./")
