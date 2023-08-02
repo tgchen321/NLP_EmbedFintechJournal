@@ -6,7 +6,7 @@ def pdf2text(IFileName, journal):
     PDFDocument = fitz.open(IFileName)
     
     plainText = ""
-    references = [{"id": 0, "title": "", "journal": ""}]
+    references = [{"id": 0, "title": "", "journal": "", "sentences": []}]
     section = "main" # "main" -> "reference" -> "done"
     longTitle = False
     for pageNum in range(PDFDocument.page_count):
@@ -265,8 +265,8 @@ def CitationSentence(IFileName):
     return count
 
 
-def MatchRefFile(IFileName, repoFolder):
-
+def MatchRefFile(IFileName, repoFolder, dataCollector):
+    counter = 0
     dirList = {}
     for scanFile in os.listdir(repoFolder):
         if os.path.isdir(os.path.join(repoFolder, scanFile)):
@@ -276,17 +276,34 @@ def MatchRefFile(IFileName, repoFolder):
     with open(IFileName, "rb") as pkl:
         references = pickle.load(pkl)
     for ref in references:
-        folder = ref["journal"].lower().replace(" ", "")
-        # print(folder)
-        filename = ref["title"].lower()
-        if folder not in dirList.keys(): continue
-        print("find: " + filename)
-        for scanner in os.listdir(os.path.join(repoFolder, dirList[folder])):
-            if re.findall(r'[\S]+' + filename[0:20] + r'[\S\s]+' + ".txt", scanner.lower()):
-                print(scanner)
-    ############ keep edit here
+        id = ref["id"]
+        if references[id] is not ref:
+            print("##### REFERENCE ID ERROR")
+            return 0
+        targetFolder = ref["journal"].lower().replace(" ", "")
+        targetFilename = ref["title"].lower()
 
+        # debug: escape parenthesis
+        # targetFilename = targetFilename.replace("(", "\(").replace(")", "\)").replace("[", "\[").replace("]", "\]").replace("{", "\{").replace("}", "\}")
 
+        if targetFolder not in dirList.keys(): continue
+        # print("find: " + targetFilename)
+        for scanner in os.listdir(os.path.join(repoFolder, dirList[targetFolder])):
+            if re.findall(r'[\S]+' + re.escape(targetFilename[0:20]) + r'[\S\s]+' + ".txt", scanner.lower()):
+                counter += 1
+                filePath = os.path.join(repoFolder, dirList[targetFolder], scanner)
+                # print(filePath)
+                with open(filePath, "rb") as textFile:
+                    # print("Find: txt file")
+                    text = str(textFile.read())
+                    text = re.sub(r"\[[0-9]+\]", "", text)
+                    references[id]["fullText"] = text
+                    for sent in ref["sentences"]:
+                        dataCollector.append({"citeSent": sent, "fullText": text})
+                break
+    with open(IFileName, "wb") as pkl:
+        pickle.dump(references, pkl)
+    return [len(references), counter, dataCollector]
 
 
 
@@ -346,16 +363,17 @@ def Unicode2Str(str):
 
 
 # pdf2text("test/Nizamani-2021-A Novel Hybrid Textual-Graphical.pdf", "IEEEaccess")
-# with open("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.pkl", "rb") as pkl:
+# CitationSentence("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.txt")
+# [refNum, FullTextNum] = MatchRefFile("IEEEaccess/Abbas-2021-Securing Genetic Algorithm Enabled.pkl", ".")
+# print("----> " + str(FullTextNum) + " out of " + str(refNum) + " txt files are found")
+# with open("IEEEaccess/Alhajri-2022-A Blockchain-Based Consent Mechan.pkl", "rb") as pkl:
 #     references = pickle.load(pkl)
 # for ref in references:
-#     for key, value in ref.items():
-#         print(key + "\t" + str(value))
-
-# CitationSentence("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.txt")
-# with open("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.pkl", "rb") as pkl:
-#     CiteSents = pickle.load(pkl)
-# for sent in CiteSents:
-#     print(sent)
-
-MatchRefFile("IEEEaccess/Abbas-2021-Securing Genetic Algorithm Enabled.pkl", "./")
+#     if "fullText" not in ref.keys(): continue
+#     print("id:\t" + str(ref["id"]))
+#     print("journal:\t" + ref["journal"])
+#     print("title:\t" + ref["title"])
+#     print("sentences:")
+#     print(ref["sentences"])
+#     print("full text\t: " + str(len(ref["fullText"])) + " words")
+# MatchRefFile("IEEEaccess/Alharbi-2020-Deployment of Blockchain Technolo.pkl", ".", [])

@@ -1,6 +1,7 @@
-import os
+import os, pickle
 from pathlib import Path
-from myPDFTool import pdf2text, CitationSentence
+from myPDFTool import pdf2text, CitationSentence, MatchRefFile
+from myNLPTool import Tokenise
 
 
 # move PDFs out from folders
@@ -40,29 +41,36 @@ def BatchCitationSentence(targetFolder):
 		print("Sentences: \t" + file[0:-4] + "...")
 	return citeCount
 
+def BatchMatchReferenceFile(targetFolder, repoFolder):
+
+	dataset = []
+	for file in os.listdir(targetFolder):
+		if not file.endswith((".pkl")): continue
+		if file.endswith(("_citeSents.pkl")): continue
+
+		[refNum, FullTextNum, dataset] = MatchRefFile(str(Path(targetFolder).joinpath(file)), repoFolder, dataset)
+		print("Match: \t" + file[0:-4] + "...")
+		print("-----> " + str(FullTextNum) + " out of " + str(refNum) + " txt files are found")
+	return dataset
 
 if __name__ == "__main__":
 	targetFolder = "IEEEaccess"
 	journal = targetFolder
+	repoFolder = "."
 	# BatchMovePDF(targetFolder)
 	# BatchPDF2text(targetFolder, journal)
-	dictionary = BatchCitationSentence(targetFolder)
-	count = dictionary.values()
-	for key, value in dictionary.items():
-		print(key + ":\t" + str(value))
-	print("Average citation sentences: " + str(sum(count)/len(count)))
-	print("Maximum citation sentences: " + str(max(count)))
-	print("Minimum citation sentences: " + str(min(count)))
-	
-
-
-# # convert PDFs to plain texts
-# def BatchPDF2text(targetFolder):
-# 	for file in os.listdir(targetFolder):
-# 		# files: 'Podolchak-2022-UKRAINIAN ECOSYSTEM TRANSFORMAT.pdf'
-# 		if not file.endswith((".pdf")): continue
-
-# 		# print(targetFolder + "/" + file)
-# 		# test/Nasir-2021-Trends and Directions of Financial.pdf
-# 		pdf2text(str(Path(targetFolder).joinpath(file)))
-# 		print("Plain Text:\t" + file[0:-4] + "...")
+	# dictionary = BatchCitationSentence(targetFolder)
+	# count = dictionary.values()
+	# for key, value in dictionary.items():
+	# 	print(key + ":\t" + str(value))
+	# print("Average citation sentences: " + str(sum(count)/len(count)))
+	# print("Maximum citation sentences: " + str(max(count)))
+	# print("Minimum citation sentences: " + str(min(count)))
+	# dataset = BatchMatchReferenceFile(targetFolder, repoFolder)
+	# print("---> " + str(len(dataset)) + " records (data)")
+	# with open("dataList.pkl", "wb") as pkl:
+	# 	pickle.dump(dataset, pkl)
+	with open("dataList.pkl", "rb") as pkl:
+		dataset = pickle.load(pkl)
+	# print(dataset[0]["citeSent"])
+	Tokenise(dataset[0]["fullText"])
