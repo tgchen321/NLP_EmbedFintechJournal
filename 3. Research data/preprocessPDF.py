@@ -1,7 +1,7 @@
 import os, pickle
 from pathlib import Path
-from myPDFTool import pdf2text, CitationSentence, MatchRefFile
-from myNLPTool import Tokenise
+import myPDFTool, myNLPTool
+from matplotlib import pyplot as plt
 
 
 # move PDFs out from folders
@@ -28,7 +28,7 @@ def BatchPDF2text(targetFolder, journal):
 	for file in os.listdir(targetFolder):
 		if not file.endswith((".pdf")): continue
 
-		pdf2text(str(Path(targetFolder).joinpath(file)), journal)
+		myPDFTool.pdf2text(str(Path(targetFolder).joinpath(file)), journal)
 		print("Plain: \t" + file[0:-4] + "...")
 
 
@@ -37,7 +37,7 @@ def BatchCitationSentence(targetFolder):
 	for file in os.listdir(targetFolder):
 		if not file.endswith((".txt")): continue
 		
-		citeCount[file[0:-4]] = CitationSentence(str(Path(targetFolder).joinpath(file)))
+		citeCount[file[0:-4]] = myPDFTool.CitationSentence(str(Path(targetFolder).joinpath(file)))
 		print("Sentences: \t" + file[0:-4] + "...")
 	return citeCount
 
@@ -48,7 +48,7 @@ def BatchMatchReferenceFile(targetFolder, repoFolder):
 		if not file.endswith((".pkl")): continue
 		if file.endswith(("_citeSents.pkl")): continue
 
-		[refNum, FullTextNum, dataset] = MatchRefFile(str(Path(targetFolder).joinpath(file)), repoFolder, dataset)
+		[refNum, FullTextNum, dataset] = myPDFTool.MatchRefFile(str(Path(targetFolder).joinpath(file)), repoFolder, dataset)
 		print("Match: \t" + file[0:-4] + "...")
 		print("-----> " + str(FullTextNum) + " out of " + str(refNum) + " txt files are found")
 	return dataset
@@ -72,5 +72,13 @@ if __name__ == "__main__":
 	# 	pickle.dump(dataset, pkl)
 	with open("dataList.pkl", "rb") as pkl:
 		dataset = pickle.load(pkl)
-	# print(dataset[0]["citeSent"])
-	Tokenise(dataset[0]["fullText"])
+	sentences, words = myNLPTool.Tokenise(dataset[0]["fullText"])
+	api_token = "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"
+	# result = myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], sentences) #0.649-0.838
+	result = myNLPTool.miniLMBERT(api_token, dataset[0]["citeSent"], sentences) #-0.086-0.517
+	fig, ax = plt.subplots(figsize =(10, 7))
+	ax.hist(result)
+	plt.show()
+	print("Average similarity(cosine sim.): " + str(sum(result)/len(result)))
+	print("Maximum similarity(cosine sim.): " + str(max(result)))
+	print("Minimum similarity(cosine sim.): " + str(min(result)))
