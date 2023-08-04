@@ -1,6 +1,6 @@
 # import PyPDF2 as pdf
 import fitz, pickle, re, os
-####### manage to put the main content of the reference paper and its citaiton sentences in the same place
+from unidecode import unidecode
 
 def pdf2text(IFileName, journal):
     PDFDocument = fitz.open(IFileName)
@@ -45,6 +45,7 @@ def pdf2text(IFileName, journal):
             #     plainText += "\n"
         # if pageNum == 1: break
 
+    plainText = unidecode(plainText)
     with open(IFileName[:-4] + ".txt", "w", encoding="utf-8") as textFile:
         textFile.write(plainText)
     with open(IFileName[:-4] + ".pkl", "wb") as pkl:
@@ -240,7 +241,7 @@ def CitationSentence(IFileName):
         # extract citation sentences
         if len(citeNums) > 0:
             # debug: convert special characters utf-8
-            sentence = Unicode2Str(sentence)
+            # sentence = Unicode2Str(sentence)
             if "\\" in sentence: print(sentence)
 
             # serialisation
@@ -358,6 +359,11 @@ def Unicode2Str(str):
     str = str.replace("\\xef\\xac\\x82", "fl")
     str = str.replace("\\xef\\xac\\x83", "ffi")
     str = str.replace("\\xef\\xac\\x84", "ffl")
+    str = str.replace("ff", "ff")
+    str = str.replace("fi", "fi")
+    str = str.replace("fl", "fl")
+    str = str.replace("ffi", "ffi")
+    str = str.replace("ffl", "ffl")
     str = re.sub(r'\\xef\\xac\\x8[56]', 'st', str)
     return str
 
@@ -366,8 +372,11 @@ def Unicode2Str(str):
 # CitationSentence("IEEEaccess/Hu-2019-Collaborative Optimization of Distribu.txt")
 # [refNum, FullTextNum] = MatchRefFile("IEEEaccess/Abbas-2021-Securing Genetic Algorithm Enabled.pkl", ".")
 # print("----> " + str(FullTextNum) + " out of " + str(refNum) + " txt files are found")
-# with open("IEEEaccess/Alhajri-2022-A Blockchain-Based Consent Mechan.pkl", "rb") as pkl:
-#     references = pickle.load(pkl)
+# pdf2text("IEEEaccess/Shahid-2020-Blockchain-Based Agri-Food Supply.pdf", "IEEEaccess")
+# with open("IEEEaccess/Shahid-2020-Blockchain-Based Agri-Food Supply.txt", "rb") as textFile:
+#     text = str(textFile.read())
+#     idiot = re.findall(r".?.?\\.?.?.?", text)
+#     print(idiot)
 # for ref in references:
 #     if "fullText" not in ref.keys(): continue
 #     print("id:\t" + str(ref["id"]))

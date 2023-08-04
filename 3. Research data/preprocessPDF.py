@@ -1,7 +1,8 @@
-import os, pickle
+import os, pickle, math
 from pathlib import Path
 import myPDFTool, myNLPTool
 from matplotlib import pyplot as plt
+from gensim.models import Word2Vec
 
 
 # move PDFs out from folders
@@ -53,6 +54,21 @@ def BatchMatchReferenceFile(targetFolder, repoFolder):
 		print("-----> " + str(FullTextNum) + " out of " + str(refNum) + " txt files are found")
 	return dataset
 
+def Evaluation(result):
+	# print(result)
+	print("# RESULTS: ")
+	result.sort(reverse = True)
+	print("Average similarity(cosine sim.): " + str(sum(result)/len(result)))
+	print("Maximum similarity(cosine sim.): " + str(result[0]))
+	print("Minimum similarity(cosine sim.): " + str(result[-1]))
+	if len(result) > 10:
+		top10 = math.ceil(len(result)/10)
+		print("Top 10% average similarity(cosine sim.): " + str(sum(result[:top10])/top10))
+		_, ax = plt.subplots(figsize =(10, 7))
+		ax.hist(result)
+		plt.show()
+	print()
+
 if __name__ == "__main__":
 	targetFolder = "IEEEaccess"
 	journal = targetFolder
@@ -70,15 +86,34 @@ if __name__ == "__main__":
 	# print("---> " + str(len(dataset)) + " records (data)")
 	# with open("dataList.pkl", "wb") as pkl:
 	# 	pickle.dump(dataset, pkl)
+
 	with open("dataList.pkl", "rb") as pkl:
 		dataset = pickle.load(pkl)
-	sentences, words = myNLPTool.Tokenise(dataset[0]["fullText"])
+	targetSents, targetWords, wholeFileInWords = myNLPTool.Tokenise(dataset[0]["fullText"])
+	_, _, queryWords = myNLPTool.Tokenise(dataset[0]["citeSent"])
 	api_token = "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"
-	# result = myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], sentences) #0.649-0.838
-	result = myNLPTool.miniLMBERT(api_token, dataset[0]["citeSent"], sentences) #-0.086-0.517
-	fig, ax = plt.subplots(figsize =(10, 7))
-	ax.hist(result)
-	plt.show()
-	print("Average similarity(cosine sim.): " + str(sum(result)/len(result)))
-	print("Maximum similarity(cosine sim.): " + str(max(result)))
-	print("Minimum similarity(cosine sim.): " + str(min(result)))
+	# (mCBOW, mSkipGram) = myNLPTool.TrainWord2Vec(targetWords, "test")
+
+	# SENTENCE EMBEDDING
+	# mCBOW = Word2Vec.load("test" + "_CBOW.model")
+	# print("### Word2Vec - CBOW - sent. embed.: ")
+	# Evaluation(myNLPTool.SimWord2Vec(mCBOW, queryWords, targetWords)) #0.941|0.891|0.650
+	# mSkipGram = Word2Vec.load("test" + "_SG.model")
+	# print("### Word2Vec - SkipGram - sent. embed.: ")
+	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, targetWords)) #0.868|0.813|0.655
+	# print("### distil BERT - pretrained - sent. embed.:")
+	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], targetSents)) #0.841|0.794|0.747
+	# print("### miniLM BERT - pretrained - sent. embed.:")
+	# Evaluation(myNLPTool.miniLMBERT(api_token, dataset[0]["citeSent"], targetSents)) #0.517|0.354|0.152
+
+	# DOCUMENT EMBEDDING
+	# mCBOW = Word2Vec.load("test" + "_CBOW.model")
+	# print("### Word2Vec - CBOW - sent. embed.: ")
+	# Evaluation(myNLPTool.SimWord2Vec(mCBOW, queryWords, [wholeFileInWords])) #0.855
+	# mSkipGram = Word2Vec.load("test" + "_SG.model")
+	# print("### Word2Vec - SkipGram - sent. embed.: ")
+	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, [wholeFileInWords])) #0.849
+	# print("### distil BERT - pretrained - sent. embed.:")
+	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], [dataset[0]["fullText"]])) #0.752
+	# print("### miniLM BERT - pretrained - sent. embed.:")
+	# Evaluation(myNLPTool.miniLMBERT(api_token, dataset[0]["citeSent"], [dataset[0]["fullText"]])) #0.257

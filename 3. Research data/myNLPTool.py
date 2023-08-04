@@ -1,39 +1,65 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 from gensim.models import Word2Vec
 import requests
-from scipy import spatial
+import numpy as np
 
-# tokenise sentences -> tokenise words -> remove stopwords -> 
+# tokenise sentences -> tokenise words -> remove stopwords -> lemmatisation
 def Tokenise(texts):
     texts = texts.replace("\n", " ")
     text2sent2word = []
     text2sent = []
+    text2word = []
     stopWords = set(stopwords.words('english'))
+    wnl = WordNetLemmatizer()
 
     for sentence in sent_tokenize(texts):
         text2sent.append(sentence)
         sent2word= []
-        # cleanSentence = ""
         for word in word_tokenize(sentence):
             if word.lower() in stopWords: continue
-            sent2word.append(word)
-            # cleanSentence += (word + " ")
+            sent2word.append(wnl.lemmatize(word))
+            text2word.append(wnl.lemmatize(word))
             text2sent2word.append(sent2word)
-        # text2sent.append(cleanSentence)
-    return text2sent, text2sent2word
+    return text2sent, text2sent2word, text2word
 
 
-
-def ApplyWord2Vec(words):
-    model1 = Word2Vec(words, min_count = 1, vector_size = 100, window = 5)
-
-    # print("Cosine similarity between 'blockchain' and 'moreover' - CBOW : ", model1.wv.similarity('blockchain', 'moreover')) # 0.664
-    # print("Cosine similarity between 'blockchain' and 'data' - CBOW : ", model1.wv.similarity('blockchain', 'data')) # 0.830
-    model2 = Word2Vec(words, min_count = 1, vector_size = 100, window = 5, sg = 1)
- 
+def TrainWord2Vec(trCorpus, modelName):
+    modelCBOW = Word2Vec(trCorpus, min_count = 1, vector_size = 100, window = 5)
+    modelSkipGram = Word2Vec(trCorpus, min_count = 1, vector_size = 100, window = 5, sg = 1)
     # print("Cosine similarity between 'blockchain' and 'moreover' - Skip Gram : ", model2.wv.similarity('blockchain', 'moreover')) # 0.304
-    # print("Cosine similarity between 'blockchain' and 'data' - Skip Gram : ", model2.wv.similarity('blockchain', 'data')) # 0.274
+    modelCBOW.save(modelName + "_CBOW.model")
+    modelSkipGram.save(modelName + "_SG.model")
+    return (modelCBOW, modelSkipGram)
+
+
+def SimWord2Vec(model, querySent, targetSents):
+    queryWV = np.zeros(shape=(100,))
+    count = 0
+    print("# QUERY SENTENCE: ")
+    for word in querySent:
+        if word in model.wv.key_to_index.keys():
+            # print(model.wv[word].shape)
+            queryWV += model.wv[word]
+            count += 1
+        else: print("\"" + word + "\" not in training corpus")
+    queryWV = queryWV/count
+
+    result = []
+    print("# TARGET SENTENCES: ")
+    for sentence in targetSents:
+        targetWV = np.zeros(shape=(100,))
+        count = 0
+        for word in sentence:
+            if word in model.wv.key_to_index.keys():
+                # print(model.wv[word].shape)
+                targetWV += model.wv[word]
+                count += 1
+            else: print("\"" + word + "\" not in training corpus")
+        targetWV = targetWV/count
+        result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
+    return result
 
 
 def DistilBERT(api_token, querySent, targetSents):
