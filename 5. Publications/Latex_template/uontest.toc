@@ -6,18 +6,18 @@
 \contentsline {section}{\numberline {1.5}Study Purpose}{3}{}%
 \contentsline {chapter}{\numberline {2}Literature Review}{5}{}%
 \contentsline {section}{\numberline {2.1}Text Embedding}{5}{}%
-\contentsline {subsubsection}{TF-IDF}{5}{}%
-\contentsline {subsubsection}{LSA Encoding}{5}{}%
+\contentsline {subsubsection}{BOW \& TF-IDF}{5}{}%
+\contentsline {subsubsection}{LSA Encoding}{6}{}%
 \contentsline {subsubsection}{Word2Vec Encoding}{6}{}%
 \contentsline {subsubsection}{Doc2Vec Encoding}{6}{}%
 \contentsline {subsubsection}{Universal Sentence Encoder}{6}{}%
 \contentsline {subsubsection}{GloVe}{6}{}%
 \contentsline {subsubsection}{Long-Short Term Memory}{6}{}%
-\contentsline {subsubsection}{BERT}{6}{}%
-\contentsline {subsubsection}{GPT}{6}{}%
+\contentsline {subsubsection}{BERT}{7}{}%
+\contentsline {subsubsection}{GPT}{7}{}%
 \contentsline {subsubsection}{ELMo}{7}{}%
 \contentsline {subsubsection}{Applications of Text Embedding Techniques}{7}{}%
-\contentsline {section}{\numberline {2.2}Text Similarity}{7}{}%
+\contentsline {section}{\numberline {2.2}Text Similarity}{8}{}%
 \contentsline {subsubsection}{Lexical Relation and WordNet}{8}{}%
 \contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{8}{}%
 \contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{9}{}%

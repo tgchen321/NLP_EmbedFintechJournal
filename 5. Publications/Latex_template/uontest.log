@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.20)  23 JUL 2023 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.7)  7 AUG 2023 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **"c:/Users/psxtc3/OneDrive - The University of Nottingham/NLP_dissertation/5. Publications/Latex_template/uontest.tex"
 (c:/Users/psxtc3/OneDrive - The University of Nottingham/NLP_dissertation/5. Publications/Latex_template/uontest.tex
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-06-30>
+L3 programming layer <2023-08-03>
 (./uonthesis.cls
 Document Class: uonthesis 2002/7/20 University of Nottingham Thesis Class
 (./uont11.clo)
@@ -281,14 +281,14 @@ File: biblatex.cfg
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
  (c:/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-06-30 L3 programming layer (loader) 
+Package: expl3 2023-08-03 L3 programming layer (loader) 
  (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count391
 \l__pdf_internal_box=\box51
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2023-06-30 L3 programming layer (loader) 
+(biblatex)             2023-08-03 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
  (c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (c:/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -382,7 +382,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Chapter 1.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 51.
+(Font)              using `OT1/cmr/bx/n' instead on input line 52.
 
 (./intro.tex [1
 
@@ -391,8 +391,8 @@ Chapter 2.
 (./literature_review.tex [5
 
 ] [6] [7] [8] [9])
-Overfull \hbox (3.77222pt too wide) in paragraph at lines 96--56
-[]\OT1/cmr/m/n/10.95 Wang et al.[19] pro-posed a sentence-level ci-ta-tion rec-om-men-da-tion sys-tem called SenCite
+Overfull \hbox (3.77222pt too wide) in paragraph at lines 105--58
+[]\OT1/cmr/m/n/10.95 Wang et al.[22] pro-posed a sentence-level ci-ta-tion rec-om-men-da-tion sys-tem called SenCite
  []
 
 [10]
@@ -407,13 +407,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [11
 
 ]) [12]
-Overfull \hbox (2.24527pt too wide) in paragraph at lines 100--100
-[]\OT1/cmr/m/n/10.95 A. Khatua, A. Khatua, and E. Cam-bria, ``A tale of two epi-demics: Con-tex-tual word2vec
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 106--106
+\OT1/cmr/m/n/10.95 ence of the International-Speech-Communication-Association (IN-TER-SPEECH 2008),
  []
 
 [13
 
-] [14] [15]
+]
+Overfull \hbox (2.24527pt too wide) in paragraph at lines 106--106
+[]\OT1/cmr/m/n/10.95 A. Khatua, A. Khatua, and E. Cam-bria, ``A tale of two epi-demics: Con-tex-tual word2vec
+ []
+
+[14] [15]
 Appendix A.
 [16
 
@@ -424,7 +429,7 @@ Appendix B.
 ] (./uontest.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-06-30>
+L3 programming layer <2023-08-03>
  ***********
 
 
@@ -435,15 +440,15 @@ Package logreq Info: Writing requests to 'uontest.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9731 strings out of 475236
- 188262 string characters out of 5768534
- 1925238 words of memory out of 5000000
- 30893 multiletter control sequences out of 15000+600000
+ 9744 strings out of 475187
+ 188718 string characters out of 5767784
+ 1925248 words of memory out of 5000000
+ 30955 multiletter control sequences out of 15000+600000
  565299 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,7n,81p,1165b,1255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,7n,81p,1165b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uontest.pdf (21 pages, 192512 bytes).
+Output written on uontest.pdf (21 pages, 196737 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream

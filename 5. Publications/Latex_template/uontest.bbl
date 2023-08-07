@@ -183,6 +183,135 @@
       \field{title}{Probing neural network comprehension of natural language arguments}
       \field{year}{2019}
     \endentry
+    \entry{sethy2008}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=28e3da323291c5e6c605ca500aa5111f}{%
+           family={Sethy},
+           familyi={S\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e958692c2ffac06aacd0b29bb1482fc8}{%
+           family={Ramabhadran},
+           familyi={R\bibinitperiod},
+           given={Bhuvana},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{743c04abc7325c3242c79c298ea75bfa}
+      \strng{fullhash}{743c04abc7325c3242c79c298ea75bfa}
+      \strng{bibnamehash}{743c04abc7325c3242c79c298ea75bfa}
+      \strng{authorbibnamehash}{743c04abc7325c3242c79c298ea75bfa}
+      \strng{authornamehash}{743c04abc7325c3242c79c298ea75bfa}
+      \strng{authorfullhash}{743c04abc7325c3242c79c298ea75bfa}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{INTERSPEECH 2008: 9TH ANNUAL CONFERENCE OF THE INTERNATIONAL SPEECH COMMUNICATION ASSOCIATION 2008, VOLS 1-5}
+      \field{isbn}{978-1-61567-378-0}
+      \field{note}{9th Annual Conference of the International-Speech-Communication-Association (INTERSPEECH 2008), Brisbane, AUSTRALIA, SEP 22-26, 2008}
+      \field{title}{Bag-Of-Word normalized n-gram models}
+      \field{year}{2008}
+      \field{pages}{1594\bibrangedash 1597}
+      \range{pages}{4}
+    \endentry
+    \entry{zhang2010}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5d6038c292fe254b531b0db4830097e3}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1ec450ccbc283608eae1f75d15f46f63}{%
+           family={Jin},
+           familyi={J\bibinitperiod},
+           given={Rong},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6b1a37e820a730061851a81dcca2d154}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Zhi-Hua},
+           giveni={Z\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{29879beae40ae26027f8d8e1154b1984}
+      \strng{fullhash}{29879beae40ae26027f8d8e1154b1984}
+      \strng{bibnamehash}{29879beae40ae26027f8d8e1154b1984}
+      \strng{authorbibnamehash}{29879beae40ae26027f8d8e1154b1984}
+      \strng{authornamehash}{29879beae40ae26027f8d8e1154b1984}
+      \strng{authorfullhash}{29879beae40ae26027f8d8e1154b1984}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1868-8071}
+      \field{journaltitle}{INTERNATIONAL JOURNAL OF MACHINE LEARNING AND CYBERNETICS}
+      \field{month}{12}
+      \field{number}{1-4}
+      \field{title}{Understanding bag-of-words model: a statistical framework}
+      \field{volume}{1}
+      \field{year}{2010}
+      \field{pages}{43\bibrangedash 52}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s13042-010-0001-0
+      \endverb
+    \endentry
+    \entry{li2011}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0214d715e11199522516f25a0008ba40}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ji-Rui},
+           giveni={J\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=4ff82f6b1a18a1c1939fbbfa4b4e18c5}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Yan-Fang},
+           giveni={Y\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=c871c5250af09b016c00fe46d50ee9bf}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=4eb9ce08e6b17e9e1afba1a162d64bef}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={BX},
+           giveni={B\bibinitperiod}}}%
+        {{hash=b76fa896a2171a1f8221dccf2ced670e}{%
+           family={Chai},
+           familyi={C\bibinitperiod},
+           given={CL},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Natl Nat Sci Fdn China (NSFC); NE Univ Qinhuangdao; Yanshan Univ; Nanyang Technol Univ}%
+      }
+      \strng{namehash}{a3230678fdbc2acad1c7eaeeedf0372d}
+      \strng{fullhash}{a3230678fdbc2acad1c7eaeeedf0372d}
+      \strng{bibnamehash}{a3230678fdbc2acad1c7eaeeedf0372d}
+      \strng{authorbibnamehash}{a3230678fdbc2acad1c7eaeeedf0372d}
+      \strng{authornamehash}{a3230678fdbc2acad1c7eaeeedf0372d}
+      \strng{authorfullhash}{a3230678fdbc2acad1c7eaeeedf0372d}
+      \strng{editorbibnamehash}{b59b1398a77572701c4ea21937bfb5b0}
+      \strng{editornamehash}{b59b1398a77572701c4ea21937bfb5b0}
+      \strng{editorfullhash}{b59b1398a77572701c4ea21937bfb5b0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{INFORMATION COMPUTING AND APPLICATIONS}
+      \field{isbn}{978-3-642-25254-9}
+      \field{issn}{0302-9743}
+      \field{note}{2nd International Conference on Information Computing and Applications, Qinhuangdao, PEOPLES R CHINA, OCT 28-31, 2011}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Improvement and Application of TF {*} IDF Algorithm}
+      \field{volume}{7030}
+      \field{year}{2011}
+      \field{pages}{121+}
+      \range{pages}{-1}
+    \endentry
     \entry{mottaghinia2021}{article}{}
       \name{author}{4}{}{%
         {{hash=16d606988d110365f1cdaa3fe3d55e08}{%
@@ -215,8 +344,8 @@
       \strng{authorbibnamehash}{2b2b80034e1ee6587ca97cfd5c81ca0b}
       \strng{authornamehash}{1e7ab74f589c8790cffe900a01b75511}
       \strng{authorfullhash}{2b2b80034e1ee6587ca97cfd5c81ca0b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Experimental \& Theoretical Artificial Intelligence}
@@ -264,8 +393,8 @@
       \strng{authorbibnamehash}{cb0af4f68aa053aba14ca5b23b25a591}
       \strng{authornamehash}{eca89330c1bb624b5b69042ae889b1dd}
       \strng{authorfullhash}{cb0af4f68aa053aba14ca5b23b25a591}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{BMC Medical Informatics and Decision Making}
@@ -298,8 +427,8 @@
       \strng{authorbibnamehash}{96193cf27ecb5fe6204b8618f74d9074}
       \strng{authornamehash}{96193cf27ecb5fe6204b8618f74d9074}
       \strng{authorfullhash}{96193cf27ecb5fe6204b8618f74d9074}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Ambient Computing and Intelligence (IJACI)}
@@ -337,8 +466,8 @@
       \strng{authorbibnamehash}{d0af35e05bb1b95f81c6462ce64db6eb}
       \strng{authornamehash}{d0af35e05bb1b95f81c6462ce64db6eb}
       \strng{authorfullhash}{d0af35e05bb1b95f81c6462ce64db6eb}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Information Processing \& Management}
@@ -376,8 +505,8 @@
       \strng{authorbibnamehash}{a4c848ba7b3c4c40da9bddc91c5a4340}
       \strng{authornamehash}{a4c848ba7b3c4c40da9bddc91c5a4340}
       \strng{authorfullhash}{a4c848ba7b3c4c40da9bddc91c5a4340}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Contemporary Hospitality Management}
@@ -414,8 +543,8 @@
       \strng{authorbibnamehash}{48392a86855adbf6eebaa50384ab2ab9}
       \strng{authornamehash}{48392a86855adbf6eebaa50384ab2ab9}
       \strng{authorfullhash}{48392a86855adbf6eebaa50384ab2ab9}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Lrec}
@@ -771,8 +900,8 @@
       \strng{authorbibnamehash}{5fe3988ce9bddae0026f439e63dc96e5}
       \strng{authornamehash}{5fe3988ce9bddae0026f439e63dc96e5}
       \strng{authorfullhash}{ddf06a3a788ace0503cfab79071e5277}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature}
@@ -820,8 +949,8 @@
       \strng{authorbibnamehash}{e793b80e426f7eb49254355180e78a2f}
       \strng{authornamehash}{182950c3ed8d28d4b19037cf960bd58e}
       \strng{authorfullhash}{e793b80e426f7eb49254355180e78a2f}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Biomedical Informatics}
@@ -858,8 +987,8 @@
       \strng{authorbibnamehash}{1f9c3a5ad6cd9b81448b450b92d16b05}
       \strng{authornamehash}{1f9c3a5ad6cd9b81448b450b92d16b05}
       \strng{authorfullhash}{1f9c3a5ad6cd9b81448b450b92d16b05}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientometrics}

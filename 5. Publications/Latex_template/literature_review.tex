@@ -4,8 +4,17 @@ Some advanced methods such as ELMo\cite{peters2018} and GPT\cite{brown2020} use 
 A more complex structure of neural networks and a bigger training corpus could derive a better and more robust model but a huge amount of time to train models as well.
 Hence, another improvement of embedding methods would be the trade-off between better performance and reasonable training time.
 
-\subsubsection{TF-IDF}
-Sample text sample text sample text sample text sample text
+\subsubsection{BOW \& TF-IDF}
+Bag-Of-Word (BOW) embedding is one of the most straightforward methods to extract information from texts.
+BOW uses word counts as the representation of texts, not taking the order, grammar and semantic meaning of words into account.
+A fixed-length vector is used to record the appearance frequency of a word, encoding a word into a sparse vector.\cite{sethy2008}
+BOW can successfully categorise texts\cite{zhang2010}, while text analysis from other aspects is still possible to be explored.
+
+Term frequency-inverse document frequency (TF-IDF) model uses the word occurrence in sentences and documents to denote the importance of words.
+TF-IDF assumes a word to play an important role if it occurs frequently only in some sentences as the key idea of this document.
+An important word will have a higher term frequency and a lower document frequency, which makes the TF-IDF higher.
+On the opposite, a less important word equally occurs in most of the sentences, generally used in many situations and topics but implying fewer ideas.\cite{li2011}
+
 
 \subsubsection{LSA Encoding}
 Sample text sample text sample text sample text sample text
