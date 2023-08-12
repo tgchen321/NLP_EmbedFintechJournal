@@ -1,17 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'uontest.blg'
-[157] biber-MSWIN64:340> INFO - === 
-[212] Biber.pm:419> INFO - Reading 'uontest.bcf'
-[352] Biber.pm:979> INFO - Found 23 citekeys in bib section 0
-[372] Biber.pm:4419> INFO - Processing section 0
-[389] Biber.pm:4610> INFO - Looking for bibtex file 'uontest.bib' for section 0
-[464] bibtex.pm:1713> INFO - LaTeX decoding ...
-[522] bibtex.pm:1519> INFO - Found BibTeX data source 'uontest.bib'
-[861] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[862] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[862] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[862] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[885] bbl.pm:660> INFO - Writing 'uontest.bbl' with encoding 'UTF-8'
-[909] bbl.pm:763> INFO - Output to uontest.bbl
-[910] Biber.pm:131> WARN - legacy month field 'DEC' in entry 'zhang2010' is not an integer - this will probably not sort properly.
-[910] Biber.pm:133> INFO - WARNINGS: 1
+[240] biber-MSWIN64:340> INFO - === 
+[308] Biber.pm:419> INFO - Reading 'uontest.bcf'
+[574] Biber.pm:979> INFO - Found 29 citekeys in bib section 0
+[609] Biber.pm:4419> INFO - Processing section 0
+[637] Biber.pm:4610> INFO - Looking for bibtex file 'uontest.bib' for section 0
+[744] bibtex.pm:1713> INFO - LaTeX decoding ...
+[871] bibtex.pm:1519> INFO - Found BibTeX data source 'uontest.bib'
+[1416] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1417] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1417] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1417] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1461] bbl.pm:660> INFO - Writing 'uontest.bbl' with encoding 'UTF-8'
+[1498] bbl.pm:763> INFO - Output to uontest.bbl
+[1499] Biber.pm:131> WARN - legacy month field 'DEC' in entry 'zhang2010' is not an integer - this will probably not sort properly.
+[1499] Biber.pm:131> WARN - legacy month field 'FEB' in entry 'gutmann2012' is not an integer - this will probably not sort properly.
+[1499] Biber.pm:133> INFO - WARNINGS: 2

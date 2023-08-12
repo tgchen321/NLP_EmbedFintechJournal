@@ -5,7 +5,7 @@ A more complex structure of neural networks and a bigger training corpus could d
 Hence, another improvement of embedding methods would be the trade-off between better performance and reasonable training time.
 
 \subsubsection{BOW \& TF-IDF}
-Bag-Of-Word (BOW) embedding is one of the most straightforward methods to extract information from texts.
+Bag-Of-Word (BOW) is one of the approaches to implement the vector space model\cite{salton1975} in the NLP field and one of the most straightforward ways to extract information from texts.
 BOW uses word counts as the representation of texts, not taking the order, grammar and semantic meaning of words into account.
 A fixed-length vector is used to record the appearance frequency of a word, encoding a word into a sparse vector.\cite{sethy2008}
 BOW can successfully categorise texts\cite{zhang2010}, while text analysis from other aspects is still possible to be explored.
@@ -15,32 +15,52 @@ TF-IDF assumes a word to play an important role if it occurs frequently only in 
 An important word will have a higher term frequency and a lower document frequency, which makes the TF-IDF higher.
 On the opposite, a less important word equally occurs in most of the sentences, generally used in many situations and topics but implying fewer ideas.\cite{li2011}
 
-
-\subsubsection{LSA Encoding}
-Sample text sample text sample text sample text sample text
+\subsubsection{Latent Semantic Analysis (LSA)}
+Latent Semantic Analysis (LSA), also known as Latent Semantic Indexing (LSI), is a technique in NLP and information retrieval first used in 1990 \cite{deerwester1990}.
+LSA applies math techniques, such as singular value decomposition (SVD, $M=U \Sigma V$), to a term-document matrix, such as TF-IDF matrix, to discover hidden patterns in texts and convert the matrix to lower dimensions.
+LSA decomposes a term-document matrix ($M$) into a term-topic matrix ($U$), a topic-document matrix ($V^T$) and a topic-topic diagonal matrix ($\Sigma$) denotes the importance of a certain topic in the collection.
+LSA is an unsupervised and relatively simple model compared to those neuron-network methods, making it widely used for identifying latent topics, evaluating document similarity and information retrieval.
 
 \subsubsection{Word2Vec Encoding}
-Sample text sample text sample text sample text sample text
+Word2Vec is and neuron network-based approach to perform word embedding, introduced by Google in 2013\cite{mikolov2013efficient}\cite{mikolov2013distributed}.
+Word2vec encodes the word by the context of the target word and aims to maximise the probability of predicting the target word(s).
+Word2vec can be implemented in two ways: continuous bag of words model (CBOW) and skip-gram model (SG), which are both 3-layer NN models but require different input and target prediction.
+The 3-layer NN structure includes an input layer, a hidden layer and an output layer with softmax to yield the output probabilities for every unique word in the document.
+CBOW uses the context-before and context-after to predict the target word, while SG uses a central word to predict its context-before and context-after.
+[unsupervised]
 
-\subsubsection{Doc2Vec Encoding}
-Sample text sample text sample text sample text sample text
+[NN details]
 
-\subsubsection{Universal Sentence Encoder}
-Sample text sample text sample text sample text sample text
+\cite{mnih2012} \cite{gutmann2012} negative sampling 
 
 \subsubsection{GloVe}
 Sample text sample text sample text sample text sample text
 
+\subsubsection{FastText}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{RNN}
+Sample text sample text sample text sample text sample text
+
 \subsubsection{Long-Short Term Memory}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{ELMo}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{self-attention}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{transformer}
+Sample text sample text sample text sample text sample text
+
+\subsubsection{Universal Sentence Encoder}
 Sample text sample text sample text sample text sample text
 
 \subsubsection{BERT}
 Sample text sample text sample text sample text sample text
 
 \subsubsection{GPT}
-Sample text sample text sample text sample text sample text
-
-\subsubsection{ELMo}
 Sample text sample text sample text sample text sample text
 
 \subsubsection{Applications of Text Embedding Techniques}

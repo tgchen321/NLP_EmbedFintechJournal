@@ -7,23 +7,26 @@
 \contentsline {chapter}{\numberline {2}Literature Review}{5}{}%
 \contentsline {section}{\numberline {2.1}Text Embedding}{5}{}%
 \contentsline {subsubsection}{BOW \& TF-IDF}{5}{}%
-\contentsline {subsubsection}{LSA Encoding}{6}{}%
+\contentsline {subsubsection}{Latent Semantic Analysis (LSA)}{6}{}%
 \contentsline {subsubsection}{Word2Vec Encoding}{6}{}%
-\contentsline {subsubsection}{Doc2Vec Encoding}{6}{}%
-\contentsline {subsubsection}{Universal Sentence Encoder}{6}{}%
 \contentsline {subsubsection}{GloVe}{6}{}%
-\contentsline {subsubsection}{Long-Short Term Memory}{6}{}%
-\contentsline {subsubsection}{BERT}{7}{}%
-\contentsline {subsubsection}{GPT}{7}{}%
+\contentsline {subsubsection}{FastText}{7}{}%
+\contentsline {subsubsection}{RNN}{7}{}%
+\contentsline {subsubsection}{Long-Short Term Memory}{7}{}%
 \contentsline {subsubsection}{ELMo}{7}{}%
-\contentsline {subsubsection}{Applications of Text Embedding Techniques}{7}{}%
+\contentsline {subsubsection}{self-attention}{7}{}%
+\contentsline {subsubsection}{transformer}{7}{}%
+\contentsline {subsubsection}{Universal Sentence Encoder}{7}{}%
+\contentsline {subsubsection}{BERT}{8}{}%
+\contentsline {subsubsection}{GPT}{8}{}%
+\contentsline {subsubsection}{Applications of Text Embedding Techniques}{8}{}%
 \contentsline {section}{\numberline {2.2}Text Similarity}{8}{}%
-\contentsline {subsubsection}{Lexical Relation and WordNet}{8}{}%
-\contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{8}{}%
-\contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{9}{}%
-\contentsline {chapter}{\numberline {3}Material and Method}{11}{}%
-\contentsline {section}{\numberline {3.1}Dataset}{11}{}%
-\contentsline {subsection}{\numberline {3.1.1}Second Level Heading}{12}{}%
-\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{12}{}%
-\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{16}{}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{17}{}%
+\contentsline {subsubsection}{Lexical Relation and WordNet}{9}{}%
+\contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{9}{}%
+\contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{10}{}%
+\contentsline {chapter}{\numberline {3}Material and Method}{12}{}%
+\contentsline {section}{\numberline {3.1}Dataset}{12}{}%
+\contentsline {subsection}{\numberline {3.1.1}Second Level Heading}{13}{}%
+\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{13}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{18}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{19}{}%
