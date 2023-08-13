@@ -771,8 +771,8 @@
       \strng{authorbibnamehash}{48392a86855adbf6eebaa50384ab2ab9}
       \strng{authornamehash}{48392a86855adbf6eebaa50384ab2ab9}
       \strng{authorfullhash}{48392a86855adbf6eebaa50384ab2ab9}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Lrec}
@@ -800,8 +800,8 @@
       \strng{authorbibnamehash}{9d699c475c394d9f294d5927c6599c43}
       \strng{authornamehash}{9d699c475c394d9f294d5927c6599c43}
       \strng{authorfullhash}{9d699c475c394d9f294d5927c6599c43}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Concurrency and Computation: Practice and Experience}
@@ -1215,8 +1215,8 @@
       \strng{authorbibnamehash}{1f9c3a5ad6cd9b81448b450b92d16b05}
       \strng{authornamehash}{1f9c3a5ad6cd9b81448b450b92d16b05}
       \strng{authorfullhash}{1f9c3a5ad6cd9b81448b450b92d16b05}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientometrics}
@@ -1244,8 +1244,8 @@
       \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
       \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
       \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{Second}

@@ -4,7 +4,7 @@ Some advanced methods such as ELMo\cite{peters2018} and GPT\cite{brown2020} use 
 A more complex structure of neural networks and a bigger training corpus could derive a better and more robust model but a huge amount of time to train models as well.
 Hence, another improvement of embedding methods would be the trade-off between better performance and reasonable training time.
 
-\subsubsection{BOW \& TF-IDF}
+\subsubsection{Bag of Word \& TF-IDF}
 Bag-Of-Word (BOW) is one of the approaches to implement the vector space model\cite{salton1975} in the NLP field and one of the most straightforward ways to extract information from texts.
 BOW uses word counts as the representation of texts, not taking the order, grammar and semantic meaning of words into account.
 A fixed-length vector is used to record the appearance frequency of a word, encoding a word into a sparse vector.\cite{sethy2008}
@@ -15,29 +15,42 @@ TF-IDF assumes a word to play an important role if it occurs frequently only in 
 An important word will have a higher term frequency and a lower document frequency, which makes the TF-IDF higher.
 On the opposite, a less important word equally occurs in most of the sentences, generally used in many situations and topics but implying fewer ideas.\cite{li2011}
 
-\subsubsection{Latent Semantic Analysis (LSA)}
+\subsubsection{Latent Semantic Analysis}
 Latent Semantic Analysis (LSA), also known as Latent Semantic Indexing (LSI), is a technique in NLP and information retrieval first used in 1990 \cite{deerwester1990}.
 LSA applies math techniques, such as singular value decomposition (SVD, $M=U \Sigma V$), to a term-document matrix, such as TF-IDF matrix, to discover hidden patterns in texts and convert the matrix to lower dimensions.
 LSA decomposes a term-document matrix ($M$) into a term-topic matrix ($U$), a topic-document matrix ($V^T$) and a topic-topic diagonal matrix ($\Sigma$) denotes the importance of a certain topic in the collection.
 LSA is an unsupervised and relatively simple model compared to those neuron-network methods, making it widely used for identifying latent topics, evaluating document similarity and information retrieval.
 
-\subsubsection{Word2Vec Encoding}
+\subsubsection{Word2Vec: Continuous Bag of Word and Skip Gram}
 Word2Vec is and neuron network-based approach to perform word embedding, introduced by Google in 2013\cite{mikolov2013efficient}\cite{mikolov2013distributed}.
-Word2vec encodes the word by the context of the target word and aims to maximise the probability of predicting the target word(s).
-Word2vec can be implemented in two ways: continuous bag of words model (CBOW) and skip-gram model (SG), which are both 3-layer NN models but require different input and target prediction.
-The 3-layer NN structure includes an input layer, a hidden layer and an output layer with softmax to yield the output probabilities for every unique word in the document.
-CBOW uses the context-before and context-after to predict the target word, while SG uses a central word to predict its context-before and context-after.
-[unsupervised]
+Word2vec encodes the word by the context of the target word and aims to maximise the probability of predicting the context word(s) as the object of the NN model.
+Word2vec can be implemented in two ways: continuous bag of words model (CBOW) and skip-gram model (SG), which are both 3-layer NN models but require different input and prediction.
+The 3-layer NN structure includes an input layer, a hidden layer and an output layer along with a softmax function to yield the output probabilities for every unique word in the document to present in the context given the target word.
+CBOW uses the context-before and context-after to predict the central word, while SG uses the central word to predict its context-before and context-after.
+Word2vec is a self-supervised algorithm, which means the NN model needs the central word for CBOW and the context words for SG as the expectation of training, while the prediction labels are implied in the content hence we don't have to provide them to the model.
 
-[NN details]
+The training of NN model starts from the one-hot embedding of target words as an input vector.
+The non-linear activation function, usually in the hidden and output layers, is removed to provide a more efficient calculation.
+The output vector is the size of unique words and is usually very long, making it a huge time-consuming to calculate the denominator of softmax function.
+Hence, \cite{mikolov2013efficient} described hierarchical softmax to speed up the process with a binary tree, the Huffman tree, and reduce the time complexity from O(n) to O(log n).
+Additionally, within a certain window size, only a few words are present in the context of the target word compared to the number of all unique words, which means the expected output vector of target words is highly sparse.
+The negative sampling had been presented by \cite{mnih2012} \cite{gutmann2012} and was involved to select less number of not-presented candidates (negative samples) to do the softmax with presented candidates (positive samples), described in \cite{mikolov2013distributed} as an alternative to hierarchical softmax.
 
-\cite{mnih2012} \cite{gutmann2012} negative sampling 
+\subsubsection{Global Vectors for Word Representation}
+Global Vectors for Word Representation (GloVe) is a co-occurrence matrix-based method, calculated with the sliding window just like the window_size of word2vec.
+The co-occurrence matrix records the frequency of a pair of words present in the same context of a fixed length of words.
+This matrix is then transformed into a ratio of two probabilities: (1)the co-occurrence probability of a candidate given one target term, and (2)the co-occurrence probability of the same candidate given another target term.
+For a given candidate word, the ratio matrix denotes a larger value if the numerator term co-occurs with the candidate word more often than the denominator term does, which indicates a more similar semantic of the numerator to the candidate word, and vice versa.
+If the candidate words have similar relations to both two target words, the probability ratio would be close to 1.
 
-\subsubsection{GloVe}
-Sample text sample text sample text sample text sample text
+Compare to Bag-of-Word and LSA, instead of using a whole sentence or paragraph, GloVe uses a sliding window to count the frequency of co-occurrence, which brings the distance information of the pair of words to the co-occurrence matrix.
+Also, compare to word2vec, GloVe choose a non-NN method to keep the structure fast and simple.
+GloVe and word2vec both use a sliding window to extract context information, but word2vec uses context words and target words as input and target output to train the parameters in the model and GloVe uses context to calculate co-occurrence.
 
 \subsubsection{FastText}
-Sample text sample text sample text sample text sample text
+FastText is famous for its application in document classification tasks, however, we can still use it to embed words.
+FastText applies character n-grams features to word2vec model to not only embed a whole word but also subwords, making it possible to deal with out-of-vocab words.
+
 
 \subsubsection{RNN}
 Sample text sample text sample text sample text sample text
