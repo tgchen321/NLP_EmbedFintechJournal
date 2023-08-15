@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.7)  13 AUG 2023 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.7)  15 AUG 2023 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/psxtc3/OneDrive - The University of Nottingham/NLP_dissertation/5. Publications/Latex_template/uontest.tex"
+**"c:/Users/psxtc3/OneDrive - The University of Nottingham/NLP_dissertation/5. Publications/Latex_template/uontest"
 (c:/Users/psxtc3/OneDrive - The University of Nottingham/NLP_dissertation/5. Publications/Latex_template/uontest.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-03>
@@ -208,6 +208,16 @@ Package biblatex Info: ... file 'blx-compat.def' found.
  (c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 )
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ (c:/texlive/2023/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+File: blx-bibtex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back bibtex backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (c:/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.def
@@ -345,11 +355,25 @@ File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `uontest.bcf'.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout3 = `uontest-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'uontest.bbl' found.
- (./uontest.bbl)
+ (./uontest.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'zhang2010':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'gutmann2012':
+(biblatex)                - Invalid format of field 'month'.
+
+)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -397,34 +421,38 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 20.
- [6] [7] [8] [9] [10] [11])
-Overfull \hbox (3.77222pt too wide) in paragraph at lines 128--58
-[]\OT1/cmr/m/n/10.95 Wang et al.[28] pro-posed a sentence-level ci-ta-tion rec-om-men-da-tion sys-tem called SenCite
+ [6] [7] [8]
+
+LaTeX Warning: Citation 'graves2013hybrid' on page 9 undefined on input line 80.
+
+[9] [10] [11] [12] [13])
+Overfull \hbox (3.77222pt too wide) in paragraph at lines 162--58
+[]\OT1/cmr/m/n/10.95 Wang et al.[40] pro-posed a sentence-level ci-ta-tion rec-om-men-da-tion sys-tem called SenCite
  []
 
-[12]
+[14]
 Chapter 3.
-(./material.tex [13
+(./material.tex [15
 
-]) [14]
+]) [16]
 Overfull \hbox (1.33879pt too wide) in paragraph at lines 106--106
 \OT1/cmr/m/n/10.95 ence of the International-Speech-Communication-Association (IN-TER-SPEECH 2008),
  []
 
-[15
+[17
 
-]
+] [18] [19]
 Overfull \hbox (2.24527pt too wide) in paragraph at lines 106--106
 []\OT1/cmr/m/n/10.95 A. Khatua, A. Khatua, and E. Cam-bria, ``A tale of two epi-demics: Con-tex-tual word2vec
  []
 
-[16] [17] [18]
+[20] [21]
 Appendix A.
-[19
+[22
 
 ]
 Appendix B.
-[20
+[23
 
 ] (./uontest.aux)
  ***********
@@ -435,23 +463,31 @@ L3 programming layer <2023-08-03>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                uontest
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'uontest.run.xml'.
 \openout1 = `uontest.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9762 strings out of 475187
- 189561 string characters out of 5767784
+ 9908 strings out of 475187
+ 194161 string characters out of 5767784
  1926248 words of memory out of 5000000
- 30973 multiletter control sequences out of 15000+600000
+ 31115 multiletter control sequences out of 15000+600000
  565299 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,7n,81p,1165b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on uontest.pdf (24 pages, 218806 bytes).
+ 66i,7n,81p,1986b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on uontest.pdf (27 pages, 240582 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 162 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

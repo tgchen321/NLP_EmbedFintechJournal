@@ -1,18 +1,68 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'uontest.blg'
-[162] biber-MSWIN64:340> INFO - === 
-[201] Biber.pm:419> INFO - Reading 'uontest.bcf'
-[320] Biber.pm:979> INFO - Found 29 citekeys in bib section 0
-[337] Biber.pm:4419> INFO - Processing section 0
-[351] Biber.pm:4610> INFO - Looking for bibtex file 'uontest.bib' for section 0
-[407] bibtex.pm:1713> INFO - LaTeX decoding ...
-[459] bibtex.pm:1519> INFO - Found BibTeX data source 'uontest.bib'
-[726] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[726] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[730] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[730] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[752] bbl.pm:660> INFO - Writing 'uontest.bbl' with encoding 'UTF-8'
-[773] bbl.pm:763> INFO - Output to uontest.bbl
-[773] Biber.pm:131> WARN - legacy month field 'DEC' in entry 'zhang2010' is not an integer - this will probably not sort properly.
-[773] Biber.pm:131> WARN - legacy month field 'FEB' in entry 'gutmann2012' is not an integer - this will probably not sort properly.
-[774] Biber.pm:133> INFO - WARNINGS: 2
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: uontest.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 11020 items from 5000.
+Database file #1: uontest-blx.bib
+Database file #2: uontest.bib
+Warning--I didn't find a database entry for "graves2013hybrid"
+Biblatex version: 3.19
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 42 entries,
+            6399 wiz_defined-function locations,
+            1468 strings with 18438 characters,
+and the built_in function-call counts, 438100 in all, are:
+= -- 37685
+> -- 5985
+< -- 1396
++ -- 14905
+- -- 2524
+* -- 31152
+:= -- 53857
+add.period$ -- 0
+call.type$ -- 42
+change.case$ -- 690
+chr.to.int$ -- 56
+cite$ -- 82
+duplicate$ -- 47320
+empty$ -- 35181
+format.name$ -- 3815
+if$ -- 86024
+int.to.chr$ -- 0
+int.to.str$ -- 106
+missing$ -- 0
+newline$ -- 1692
+num.names$ -- 2009
+pop$ -- 16107
+preamble$ -- 1
+purify$ -- 1131
+quote$ -- 0
+skip$ -- 8611
+stack$ -- 0
+substring$ -- 69644
+swap$ -- 7101
+text.length$ -- 1198
+text.prefix$ -- 3
+top$ -- 1
+type$ -- 1416
+warning$ -- 0
+while$ -- 6715
+width$ -- 0
+write$ -- 1651
+(There was 1 warning)
