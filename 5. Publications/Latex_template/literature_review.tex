@@ -106,15 +106,28 @@ Multi-head attention allows the model to focus on different features from differ
 Since self-attention estimates the relation of words regardless of the location or distances of words, positional encoding is used to provide position information of series elements to the model, by manually adding a specific matrix such as one-hot or sin function to the input data series to denote the order of serial input vectors.
 
 \subsubsection{transformer}
-The transformer uses self-attention layers to achieve sequence-to-sequence tasks contextually, consisting of two parts: encoder and decoder.
-Encoder deals with sequence input by self-attention layers requires a set of initial embedding vectors of words from input sentences, and yields a set of vectors sharing the same length as the input sentence.
+Transformer uses self-attention layers to achieve sequence-to-sequence tasks contextually, consisting of two parts: encoder and decoder.
+Encoder deals with sequence input by self-attention layers, requires a set of initial embedding vectors of words from input sentences, and yields a set of vectors sharing the same length as the input sentence.
 Encoder's output would then be applied to the second self-attention layer in the decoder. 
 Decoder manages to generate sequence output based on the understanding of the whole input sequence, while the output sequence doesn't have to correspond to the input sequence and might have a different length from the input sequence.
-When training a transformer, the decoder has an input sequence as a prediction label.
 
+When training a transformer, the decoder has an input sequence as a prediction label and is processed by the first self-attention layer to embed the prediction label words.
+In the second self-attention layer in decoder, instead of computing relations between each word in the prediction label, they would be treated as query words and the output vectors from encoder would be imported as key words.
+The relations of word vectors would be calculated between prediction label vectors and input embedding vectors from the encoder parallelly, hence transformers can deal with seq2seq tasks regardless of the word count of neither input nor output sentence.
+Decoder's output is a set of prediction vectors representing the probability of the corresponding word, and the objective function of a transformer is to maximise the probabilities.
+However, when generating a sentence from an unknown input sentence, no prediction label is provided.
+The input and output of encoder remain the same, and the input of decoder would be a special token, <START>, representing the starting point of the output sentence.
+The output sentence would be generated word-by-word hence not in parallel.
+Especially, the first self-attention layer in decoder is called masked self-attention since a former word wouldn't be able to compute the relation to a latter word to mimic a real-word seq2seq situation.
 
 \subsubsection{Universal Sentence Encoder}
-Sample text sample text sample text sample text sample text
+Universal Sentence Encoder (USE) is an NN-based end-to-end sentence embedding technique to encode a sentence to a 512-length vector.
+Instead of generating the sentence embedding vector by taking an average of all of the word vectors in the sentence, USE provides two ways in its original paper to embed the whole sentence.
+The first approach stacks six transformer encoders to form the encoder of USE, while a transformer encoder consists of a self-attention and a feed forward network.
+This transformer-based model has the benefit of better accuracy in later tasks such as sentence classification, however, the complicated structure of stacked transformers and several self-attention modules results in the time complexity of $O(n^2)$ in sentence length and consumes more computing time and resources.
+The second approach utilises Deep Averaging Network (DAN) to avoid the huge computation of self-attention.
+DAN takes every single word and the word bi-grams as tokens, takes the average of all tokens, and applies four feed forward layers to generate the sentence embedding vector.
+The word bi-grams serves contextual information to the embedding model but reduces the computation of self-attention models, however, DAN-based model yields a lower accuracy compared to the transformation-based model.
 
 \subsubsection{BERT}
 Sample text sample text sample text sample text sample text

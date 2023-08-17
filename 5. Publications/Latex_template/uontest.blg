@@ -17,52 +17,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 11020 items from 5000.
+Reallocated field_info (elt_size=4) to 11720 items from 5000.
 Database file #1: uontest-blx.bib
 Database file #2: uontest.bib
 Warning--I didn't find a database entry for "graves2013hybrid"
 Biblatex version: 3.19
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 42 entries,
+You've used 47 entries,
             6399 wiz_defined-function locations,
-            1468 strings with 18438 characters,
-and the built_in function-call counts, 438100 in all, are:
-= -- 37685
-> -- 5985
-< -- 1396
-+ -- 14905
-- -- 2524
-* -- 31152
-:= -- 53857
+            1487 strings with 19300 characters,
+and the built_in function-call counts, 490650 in all, are:
+= -- 42220
+> -- 6666
+< -- 1518
++ -- 16734
+- -- 2829
+* -- 34933
+:= -- 60517
 add.period$ -- 0
-call.type$ -- 42
-change.case$ -- 690
+call.type$ -- 47
+change.case$ -- 725
 chr.to.int$ -- 56
-cite$ -- 82
-duplicate$ -- 47320
-empty$ -- 35181
-format.name$ -- 3815
-if$ -- 86024
+cite$ -- 92
+duplicate$ -- 53037
+empty$ -- 39396
+format.name$ -- 4289
+if$ -- 96233
 int.to.chr$ -- 0
-int.to.str$ -- 106
+int.to.str$ -- 116
 missing$ -- 0
-newline$ -- 1692
-num.names$ -- 2009
-pop$ -- 16107
+newline$ -- 1879
+num.names$ -- 2199
+pop$ -- 18107
 preamble$ -- 1
-purify$ -- 1131
+purify$ -- 1222
 quote$ -- 0
-skip$ -- 8611
+skip$ -- 9521
 stack$ -- 0
-substring$ -- 69644
-swap$ -- 7101
-text.length$ -- 1198
+substring$ -- 78160
+swap$ -- 7848
+text.length$ -- 1341
 text.prefix$ -- 3
 top$ -- 1
-type$ -- 1416
+type$ -- 1586
 warning$ -- 0
-while$ -- 6715
+while$ -- 7541
 width$ -- 0
-write$ -- 1651
+write$ -- 1833
 (There was 1 warning)

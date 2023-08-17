@@ -13,20 +13,19 @@
 \contentsline {subsubsection}{FastText}{8}{}%
 \contentsline {subsubsection}{Recurrent Neural Network}{8}{}%
 \contentsline {subsubsection}{Long-Short Term Memory}{9}{}%
-\contentsline {subsubsection}{ELMo}{10}{}%
+\contentsline {subsubsection}{Embeddings from Language Model}{10}{}%
 \contentsline {subsubsection}{self-attention}{10}{}%
-\contentsline {subsubsection}{transformer}{10}{}%
-\contentsline {subsubsection}{Universal Sentence Encoder}{10}{}%
-\contentsline {subsubsection}{BERT}{10}{}%
-\contentsline {subsubsection}{GPT}{10}{}%
-\contentsline {subsubsection}{Applications of Text Embedding Techniques}{11}{}%
-\contentsline {section}{\numberline {2.2}Text Similarity}{11}{}%
-\contentsline {subsubsection}{Lexical Relation and WordNet}{12}{}%
-\contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{12}{}%
-\contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{13}{}%
-\contentsline {chapter}{\numberline {3}Material and Method}{15}{}%
-\contentsline {section}{\numberline {3.1}Dataset}{15}{}%
-\contentsline {subsection}{\numberline {3.1.1}Second Level Heading}{16}{}%
-\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{16}{}%
-\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{22}{}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{23}{}%
+\contentsline {subsubsection}{transformer}{11}{}%
+\contentsline {subsubsection}{Universal Sentence Encoder}{12}{}%
+\contentsline {subsubsection}{BERT}{12}{}%
+\contentsline {subsubsection}{Applications of Text Embedding Techniques}{12}{}%
+\contentsline {section}{\numberline {2.2}Text Similarity}{12}{}%
+\contentsline {subsubsection}{Lexical Relation and WordNet}{13}{}%
+\contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{13}{}%
+\contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{14}{}%
+\contentsline {chapter}{\numberline {3}Material and Method}{16}{}%
+\contentsline {section}{\numberline {3.1}Dataset}{16}{}%
+\contentsline {subsection}{\numberline {3.1.1}Second Level Heading}{17}{}%
+\contentsline {subsubsection}{Third Level Headings Do Not Appear in the Table of Contents}{17}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{23}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{24}{}%
