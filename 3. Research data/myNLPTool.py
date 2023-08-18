@@ -2,6 +2,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from gensim.models import Word2Vec
+from sklearn.feature_extraction.text import TfidfVectorizer
 import requests
 import numpy as np
 
@@ -23,6 +24,22 @@ def Tokenise(texts):
             text2word.append(wnl.lemmatize(word))
             text2sent2word.append(sent2word)
     return text2sent, text2sent2word, text2word
+
+
+def TrainTFIDF(trCorpus):
+    tf = TfidfVectorizer(analyzer='word')
+    tf.fit_transform(trCorpus)
+    return tf
+
+
+def SimTFIDF(tf, querySent, targetSents):
+    queryWV = tf.transform([querySent]).toarray()[0]
+
+    result = []
+    for sentence in targetSents:
+        targetWV = tf.transform([sentence]).toarray()[0]
+        result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
+    return result
 
 
 def TrainWord2Vec(trCorpus, modelName):

@@ -89,12 +89,16 @@ if __name__ == "__main__":
 
 	with open("dataList.pkl", "rb") as pkl:
 		dataset = pickle.load(pkl)
+	print(len(dataset))
 	targetSents, targetWords, wholeFileInWords = myNLPTool.Tokenise(dataset[0]["fullText"])
 	_, _, queryWords = myNLPTool.Tokenise(dataset[0]["citeSent"])
-	api_token = "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"
+	# api_token = "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"
 	# (mCBOW, mSkipGram) = myNLPTool.TrainWord2Vec(targetWords, "test")
+	TfidfVectorizer = myNLPTool.TrainTFIDF(targetSents)
 
 	# SENTENCE EMBEDDING
+	print("### TFIDF - sent. embed.: ")
+	Evaluation(myNLPTool.SimTFIDF(TfidfVectorizer, dataset[0]["citeSent"], targetSents)) #0.268|0.031|0
 	# mCBOW = Word2Vec.load("test" + "_CBOW.model")
 	# print("### Word2Vec - CBOW - sent. embed.: ")
 	# Evaluation(myNLPTool.SimWord2Vec(mCBOW, queryWords, targetWords)) #0.941|0.891|0.650
