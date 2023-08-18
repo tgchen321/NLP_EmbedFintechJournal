@@ -1,6 +1,5 @@
-\section{Dataset}
-We use the Web of Science[-citation-] search engine and database to find out the journals that produced the most fintech articles.
-
+\section{Data Collection}
+We use the Web of Science[-citation-] search engine and database to find the fintech articles and their journals.
 Reference papers were collected by the WOS search engine with rules listed as follows:
 \begin{itemize}
     \item Topic: "\textbf{Fintech}" or "\textbf{Financial technology}" or "\textbf{digital finance}" or "\textbf{electronic banking}" or "\textbf{cryptocurrency}" or "\textbf{Blockchain}"
@@ -8,9 +7,7 @@ Reference papers were collected by the WOS search engine with rules listed as fo
     \item Languages: English
 \end{itemize}
 
-We get 66,974 results on 23rd July 2023 from the Web of Science Core Collection and exported them to EndNote, and the top 10 publications with the most article are as follow:
-\begin{table}
-
+We got 66,974 results on 23rd July 2023 from the Web of Science Core Collection and the top 10 publications with the most article are as follow:
 \begin{table}[]
 \caption{Table 1. The top 10 publications with the most fintech articles.}
 \centering
@@ -25,6 +22,36 @@ We get 66,974 results on 23rd July 2023 from the Web of Science Core Collection 
     \end{tabular}
     \end{table}
 
-The \verb|Find Full Text| feature in EndNote is used to look for the full text of reference papers by their Accession numbers including Digital Object Identifier (DOI), WOS ID and PubMed ID.
+Due to the time restriction mentioned in the following section, we utilise the fintech articles from a single Journal \textit{IEEE Access} as the raw data of this research.
+The fintech articles are exported to \texttt{EndNote 20}\footnote{https://endnote.com/} and the \texttt{Find Full Text} feature is used to look for their full text by their Accession numbers including Digital Object Identifier (DOI), WOS ID and PubMed ID.
 This feature enables us to automatically batch-download loads of reference papers as PDF files if the journal is available in Open Access resources.
 
+\section{Data Structuring}
+We convert the unstructured PDF file into a structured database consisting of pairs of a citation sentence and its full-text reference paper.
+Firstly, we extract the main content with citations and the bibliography of the articles from PDF files to a plain text file and a dictionary, respectfully.
+This process is to remove non-organised and less-informed texts, such as page numbers, article titles, journal names, images, math equations and paragraph/section labels, to make sure the sentences in the main content can be fully extracted for further analysis.
+The bibliography of the articles is also extracted and the information of each reference paper is well-organised to a dictionary.
+The reference papers extracted from an article are serialised by \texttt{pickle}\footnote{https://docs.python.org/3/library/pickle.html} module to a list of dictionaries.
+The citation sentence can then look up to its corresponding reference paper via the information in this reference dictionary and be matched with the full text.
+The Python tool \texttt{PyMuPDF}\footnote{https://pypi.org/project/PyMuPDF/} is used to obtain the style and location of lines, spans, and sections in a PDF page.
+The patterns including font size, style and colour are set manually and utilised to recognise if the texts in the current span are the main content, bibliography, or non of both.
+Hence, the design and layout of a journal would highly affect the criteria of the extraction.
+We would have to customise the process of data extraction from one journal to another, which takes a lot of time and effort and we're not yet able to program the automatic recognition.
+
+Secondly, The sentences that are inspired by reference papers, called citation sentences, are extracted and organised with the reference number.
+We split the full texts into sentences and recognise the citation sentences by square brackets with a number in them.
+The citation sentence and reference number would be organised and serialised into a list.
+Last but not least, the citation sentence and the reference paper are matched together to form the database for this research.
+The reference information of the citation sentence can be found via the reference number and further match the citation sentence to the plain text of the reference paper.
+The citation sentences from all of the articles and their reference texts are saved as a list of dictionaries.
+The whole dataset is used for unsupervised models, while a 7:3 ratio is applied to split the database into the training set and the test set for supervised models.
+
+\section{Data Preprocessing}
+Data preprocessing includes every approach to convert the database to the required input of every embedding model.
+Among all the preprocessing steps, \texttt{unidecode} is priorly applied to texts to convert special characters to the closest English characters, such as \textit{\o}, \textit{\^o}, \textit{\~o}, \textit{\=o}, \textit{\'o}, \textit{\u o}, \textit{\v o}, \textit{\oo}, \textit{\oe} and ligature such as \textit{fi}, \textit{fl} and \textit{ff}
+Sentence tokenisation is applied to separate the whole article into sentences basically by the period mark.
+Word tokenisation is applied to sentences that split them into words roughly by space.
+Stop words are removed from the word tokens and lemmatisation is applied to the word tokens to reduce inflected forms of a word into the word's lemma to treat them as a single word since they contain a similar meaning even if they look different.
+The above process is implemented by Natural Language Toolkit, \texttt{nltk}.
+
+\section{Experiments}
