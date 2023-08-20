@@ -1,10 +1,14 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from gensim.models import Word2Vec
-from sklearn.feature_extraction.text import TfidfVectorizer
+from gensim.models import Word2Vec, TfidfModel, LsiModel
+from gensim.corpora import Dictionary
+from gensim.matutils import corpus2dense
+from gensim.models.coherencemodel import CoherenceModel
+from sklearn.decomposition import TruncatedSVD
 import requests
 import numpy as np
+from matplotlib import pyplot as plt
 
 # tokenise sentences -> tokenise words -> remove stopwords -> lemmatisation
 def Tokenise(texts):
@@ -22,22 +26,80 @@ def Tokenise(texts):
             if word.lower() in stopWords: continue
             sent2word.append(wnl.lemmatize(word))
             text2word.append(wnl.lemmatize(word))
-            text2sent2word.append(sent2word)
+        text2sent2word.append(sent2word)
     return text2sent, text2sent2word, text2word
 
 
-def TrainTFIDF(trCorpus):
-    tf = TfidfVectorizer(analyzer='word')
-    tf.fit_transform(trCorpus)
-    return tf
+def TFIDF(fullText, citeSent):
+    fullText.append(citeSent)
+    dictionary = Dictionary()
+    BoWCorpus = [dictionary.doc2bow(sentence, allow_update=True) for sentence in fullText]
+    num_docs = dictionary.num_docs
+    print("# of sentences: " + str(num_docs))
+    num_terms = len(dictionary.keys())
+    print("# of terms: " + str(num_terms))
+
+    TFIDFMatrix = TfidfModel(BoWCorpus)[BoWCorpus]
+    denseMatrix = corpus2dense(TFIDFMatrix, num_terms, num_docs).T # sentences * words
+    queryWV = denseMatrix[-1]
+    print(queryWV.shape)
+
+    result = []
+    for targetWV in denseMatrix[0:-1]: 
+        result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
+    return result
+
+def LSA(fullText, citeSent):
+    fullText.append(citeSent)
+    dictionary = Dictionary(fullText)
+    BoWCorpus = [dictionary.doc2bow(sentence) for sentence in fullText]
+    num_docs = dictionary.num_docs
+    print("# of sentences: " + str(num_docs))
+    num_terms = len(dictionary.keys())
+    print("# of terms: " + str(num_terms))
+
+    TFIDFMatrix = TfidfModel(BoWCorpus)[BoWCorpus]
+    denseMatrix = corpus2dense(TFIDFMatrix, num_terms, num_docs).T # sentences * words
+
+    validation = []
+    num_topic = 0
+    x = range(1, min(num_docs, num_terms))
+    for n in x:
+        svd = TruncatedSVD(n_components=n).fit(denseMatrix)
+        rf = svd.explained_variance_ratio_.sum()
+        validation.append(rf)
+        if rf >= 0.9 and num_topic == 0:
+            num_topic = n
+
+    plt.plot(x, validation)
+    plt.xlabel("Number of Topics")
+    plt.legend(("explained variance ratio"), loc='best')
+    plt.show()
+
+    lsamodel = LsiModel(BoWCorpus, num_topics=num_topic, id2word = dictionary)
+    # print(lsamodel.print_topics(num_topics=n, num_words=num_terms))
+    # coherenceScore = CoherenceModel(model=lsamodel, texts=fullText, dictionary=dictionary, coherence='c_v').get_coherence()
+    # print("Coherence Score: " + str(coherenceScore))
+
+    svdMatrix = lsamodel[BoWCorpus]
+    denseMatrix = corpus2dense(svdMatrix, num_terms, num_docs).T
+    queryWV = denseMatrix[-1]
+    print(queryWV.shape)
+
+    result = []
+    for targetWV in denseMatrix[0:-1]: 
+        result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
+    return result
 
 
-def SimTFIDF(tf, querySent, targetSents):
-    queryWV = tf.transform([querySent]).toarray()[0]
+def SimTFIDF(BoWCorpus, model, querySent, targetSents):
+    # queryWV = tf.transform([querySent]).toarray()[0]
+    queryWV = model[querySent]
 
     result = []
     for sentence in targetSents:
-        targetWV = tf.transform([sentence]).toarray()[0]
+        # targetWV = tf.transform([sentence]).toarray()[0]
+        targetWV = model[sentence]
         result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
     return result
 

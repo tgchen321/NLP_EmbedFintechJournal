@@ -2,7 +2,6 @@ import os, pickle, math
 from pathlib import Path
 import myPDFTool, myNLPTool
 from matplotlib import pyplot as plt
-from gensim.models import Word2Vec
 
 
 # move PDFs out from folders
@@ -94,17 +93,18 @@ if __name__ == "__main__":
 	_, _, queryWords = myNLPTool.Tokenise(dataset[0]["citeSent"])
 	# api_token = "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"
 	# (mCBOW, mSkipGram) = myNLPTool.TrainWord2Vec(targetWords, "test")
-	TfidfVectorizer = myNLPTool.TrainTFIDF(targetSents)
 
 	# SENTENCE EMBEDDING
-	print("### TFIDF - sent. embed.: ")
-	Evaluation(myNLPTool.SimTFIDF(TfidfVectorizer, dataset[0]["citeSent"], targetSents)) #0.268|0.031|0
+	# print("### TFIDF - sent. embed.: ")
+	# Evaluation(myNLPTool.TFIDF(targetWords, queryWords)) #0.228|0.077|0.014
+	# print("### LSA - sent. embed.: ")
+	# Evaluation(myNLPTool.LSA(targetWords, queryWords)) #0.646|0.425|0.159
 	# mCBOW = Word2Vec.load("test" + "_CBOW.model")
 	# print("### Word2Vec - CBOW - sent. embed.: ")
-	# Evaluation(myNLPTool.SimWord2Vec(mCBOW, queryWords, targetWords)) #0.941|0.891|0.650
+	# Evaluation(myNLPTool.SimWord2Vec(mCBOW, queryWords, targetWords)) #0.994|0.991|0.978
 	# mSkipGram = Word2Vec.load("test" + "_SG.model")
 	# print("### Word2Vec - SkipGram - sent. embed.: ")
-	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, targetWords)) #0.868|0.813|0.655
+	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, targetWords)) #0.999|0.999|0.999
 	# print("### distil BERT - pretrained - sent. embed.:")
 	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], targetSents)) #0.841|0.794|0.747
 	# print("### miniLM BERT - pretrained - sent. embed.:")
