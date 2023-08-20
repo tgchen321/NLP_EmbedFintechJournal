@@ -54,7 +54,6 @@ def BatchMatchReferenceFile(targetFolder, repoFolder):
 	return dataset
 
 def Evaluation(result):
-	# print(result)
 	print("# RESULTS: ")
 	result.sort(reverse = True)
 	print("Average similarity(cosine sim.): " + str(sum(result)/len(result)))
@@ -116,9 +115,9 @@ if __name__ == "__main__":
 	# print("### Word2Vec - SkipGram - sent. embed.: ")
 	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, targetWords)) #0.999|0.999|0.999
 	print("### FastText - CBOW - sent. embed.: ")
-	Evaluation(myNLPTool.SimFastText(mCBOW, queryWords, targetWords))
+	Evaluation(myNLPTool.SimFastText(mCBOW, queryWords, targetWords)) #||
 	print("### FastText - CBOW - sent. embed.: ")
-	Evaluation(myNLPTool.SimFastText(mSkipGram, queryWords, targetWords))
+	Evaluation(myNLPTool.SimFastText(mSkipGram, queryWords, targetWords)) # ||
 	# print("### distil BERT - pretrained - sent. embed.:")
 	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], targetSents)) #0.841|0.794|0.747
 	# print("### miniLM BERT - pretrained - sent. embed.:")
