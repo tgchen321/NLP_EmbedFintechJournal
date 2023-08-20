@@ -91,8 +91,18 @@ if __name__ == "__main__":
 	print(len(dataset))
 	targetSents, targetWords, wholeFileInWords = myNLPTool.Tokenise(dataset[0]["fullText"])
 	_, _, queryWords = myNLPTool.Tokenise(dataset[0]["citeSent"])
+
+	# plainText = ""
+	# for dict in dataset:
+	# 	plainText += dict["fullText"]
+	# 	plainText += "\n"
+	# 	plainText += dict["citeSent"]
+	# 	plainText += "\n"
+	# with open("FastTextInput.txt", "w", encoding="utf-8") as textFile:
+	# 	textFile.write(plainText)
 	# api_token = "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"
-	# (mCBOW, mSkipGram) = myNLPTool.TrainWord2Vec(targetWords, "test")
+	# (mCBOW, mSkipGram) = myNLPTool.TrainWord2Vec(targetWords, "word2vec")
+	(mCBOW, mSkipGram) = myNLPTool.TrainFastText("FastTextInput.txt", "fastText")
 
 	# SENTENCE EMBEDDING
 	# print("### TFIDF - sent. embed.: ")
@@ -105,6 +115,10 @@ if __name__ == "__main__":
 	# mSkipGram = Word2Vec.load("test" + "_SG.model")
 	# print("### Word2Vec - SkipGram - sent. embed.: ")
 	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, targetWords)) #0.999|0.999|0.999
+	print("### FastText - CBOW - sent. embed.: ")
+	Evaluation(myNLPTool.SimFastText(mCBOW, queryWords, targetWords))
+	print("### FastText - CBOW - sent. embed.: ")
+	Evaluation(myNLPTool.SimFastText(mSkipGram, queryWords, targetWords))
 	# print("### distil BERT - pretrained - sent. embed.:")
 	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], targetSents)) #0.841|0.794|0.747
 	# print("### miniLM BERT - pretrained - sent. embed.:")

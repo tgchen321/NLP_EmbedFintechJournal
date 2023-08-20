@@ -9,6 +9,7 @@ from sklearn.decomposition import TruncatedSVD
 import requests
 import numpy as np
 from matplotlib import pyplot as plt
+import fasttext
 
 # tokenise sentences -> tokenise words -> remove stopwords -> lemmatisation
 def Tokenise(texts):
@@ -134,6 +135,40 @@ def SimWord2Vec(model, querySent, targetSents):
             if word in model.wv.key_to_index.keys():
                 # print(model.wv[word].shape)
                 targetWV += model.wv[word]
+                count += 1
+            else: print("\"" + word + "\" not in training corpus")
+        targetWV = targetWV/count
+        result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
+    return result
+
+def TrainFastText(trName, modelName):
+    modelCBOW = fasttext.train_unsupervised(trName, model = "cbow", min_count = 1, dim = 100, ws = 5)
+    modelSkipGram = fasttext.train_unsupervised(trName, model = "skipgram", min_count = 1, dim = 100, ws = 5)
+
+    modelCBOW.save(modelName + "_CBOW.model")
+    modelSkipGram.save(modelName + "_SG.model")
+    return (modelCBOW, modelSkipGram)
+
+
+def SimFastText(model, querySent, targetSents):
+    queryWV = np.zeros(shape=(100,))
+    count = 0
+    print("# QUERY SENTENCE: ")
+    for word in querySent:
+        if word in model.words:
+            queryWV += model.get_word_vector(word)
+            count += 1
+        else: print("\"" + word + "\" not in training corpus")
+    queryWV = queryWV/count
+
+    result = []
+    print("# TARGET SENTENCES: ")
+    for sentence in targetSents:
+        targetWV = np.zeros(shape=(100,))
+        count = 0
+        for word in sentence:
+            if word in model.words:
+                targetWV += model.get_word_vector(word)
                 count += 1
             else: print("\"" + word + "\" not in training corpus")
         targetWV = targetWV/count
