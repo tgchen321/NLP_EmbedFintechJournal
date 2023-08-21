@@ -143,10 +143,10 @@ def SimWord2Vec(model, querySent, targetSents):
 
 def TrainFastText(trName, modelName):
     modelCBOW = fasttext.train_unsupervised(trName, model = "cbow", min_count = 1, dim = 100, ws = 5)
-    modelSkipGram = fasttext.train_unsupervised(trName, model = "skipgram", min_count = 1, dim = 100, ws = 5)
+    modelCBOW.save_model(modelName + "_CBOW.model")
 
-    modelCBOW.save(modelName + "_CBOW.model")
-    modelSkipGram.save(modelName + "_SG.model")
+    modelSkipGram = fasttext.train_unsupervised(trName, model = "skipgram", min_count = 1, dim = 100, ws = 5)
+    modelSkipGram.save_model(modelName + "_SG.model")
     return (modelCBOW, modelSkipGram)
 
 

@@ -2,6 +2,7 @@ import os, pickle, math
 from pathlib import Path
 import myPDFTool, myNLPTool
 from matplotlib import pyplot as plt
+import fasttext
 
 
 # move PDFs out from folders
@@ -101,7 +102,9 @@ if __name__ == "__main__":
 	# 	textFile.write(plainText)
 	# api_token = "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"
 	# (mCBOW, mSkipGram) = myNLPTool.TrainWord2Vec(targetWords, "word2vec")
-	(mCBOW, mSkipGram) = myNLPTool.TrainFastText("FastTextInput.txt", "fastText")
+	mCBOW = fasttext.load_model("fastText_CBOW.model")
+	mSkipGram = fasttext.load_model("fastText_SG.model")
+	# (mCBOW, mSkipGram) = myNLPTool.TrainFastText("FastTextInput.txt", "fastText")
 
 	# SENTENCE EMBEDDING
 	# print("### TFIDF - sent. embed.: ")
@@ -114,10 +117,10 @@ if __name__ == "__main__":
 	# mSkipGram = Word2Vec.load("test" + "_SG.model")
 	# print("### Word2Vec - SkipGram - sent. embed.: ")
 	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, targetWords)) #0.999|0.999|0.999
-	print("### FastText - CBOW - sent. embed.: ")
-	Evaluation(myNLPTool.SimFastText(mCBOW, queryWords, targetWords)) #||
-	print("### FastText - CBOW - sent. embed.: ")
-	Evaluation(myNLPTool.SimFastText(mSkipGram, queryWords, targetWords)) # ||
+	# print("### FastText - CBOW - sent. embed.: ")
+	# Evaluation(myNLPTool.SimFastText(mCBOW, queryWords, targetWords)) #0.893|0.841|0.636
+	# print("### FastText - CBOW - sent. embed.: ")
+	# Evaluation(myNLPTool.SimFastText(mSkipGram, queryWords, targetWords)) #0.887|0.801|0.661
 	# print("### distil BERT - pretrained - sent. embed.:")
 	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], targetSents)) #0.841|0.794|0.747
 	# print("### miniLM BERT - pretrained - sent. embed.:")
@@ -125,12 +128,16 @@ if __name__ == "__main__":
 
 	# DOCUMENT EMBEDDING
 	# mCBOW = Word2Vec.load("test" + "_CBOW.model")
-	# print("### Word2Vec - CBOW - sent. embed.: ")
+	# print("### Word2Vec - CBOW - doc. embed.: ")
 	# Evaluation(myNLPTool.SimWord2Vec(mCBOW, queryWords, [wholeFileInWords])) #0.855
 	# mSkipGram = Word2Vec.load("test" + "_SG.model")
-	# print("### Word2Vec - SkipGram - sent. embed.: ")
+	# print("### Word2Vec - SkipGram - doc. embed.: ")
 	# Evaluation(myNLPTool.SimWord2Vec(mSkipGram, queryWords, [wholeFileInWords])) #0.849
-	# print("### distil BERT - pretrained - sent. embed.:")
+	# print("### FastText - CBOW - doc. embed.: ")
+	# Evaluation(myNLPTool.SimFastText(mCBOW, queryWords, [wholeFileInWords])) #0.764
+	# print("### FastText - CBOW - doc. embed.: ")
+	# Evaluation(myNLPTool.SimFastText(mSkipGram, queryWords, [wholeFileInWords])) #0.791
+	# print("### distil BERT - pretrained - doc. embed.:")
 	# Evaluation(myNLPTool.DistilBERT(api_token, dataset[0]["citeSent"], [dataset[0]["fullText"]])) #0.752
-	# print("### miniLM BERT - pretrained - sent. embed.:")
+	# print("### miniLM BERT - pretrained - doc. embed.:")
 	# Evaluation(myNLPTool.miniLMBERT(api_token, dataset[0]["citeSent"], [dataset[0]["fullText"]])) #0.257
