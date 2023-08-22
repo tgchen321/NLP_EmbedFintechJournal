@@ -78,9 +78,9 @@ def LSA(fullText, citeSent):
     plt.show()
 
     lsamodel = LsiModel(BoWCorpus, num_topics=num_topic, id2word = dictionary)
-    # print(lsamodel.print_topics(num_topics=n, num_words=num_terms))
-    # coherenceScore = CoherenceModel(model=lsamodel, texts=fullText, dictionary=dictionary, coherence='c_v').get_coherence()
-    # print("Coherence Score: " + str(coherenceScore))
+    print(lsamodel.print_topics(num_topics=n, num_words=num_terms))
+    coherenceScore = CoherenceModel(model=lsamodel, texts=fullText, dictionary=dictionary, coherence='c_v').get_coherence()
+    print("Coherence Score: " + str(coherenceScore))
 
     svdMatrix = lsamodel[BoWCorpus]
     denseMatrix = corpus2dense(svdMatrix, num_terms, num_docs).T
@@ -91,19 +91,6 @@ def LSA(fullText, citeSent):
     for targetWV in denseMatrix[0:-1]: 
         result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
     return result
-
-
-def SimTFIDF(BoWCorpus, model, querySent, targetSents):
-    # queryWV = tf.transform([querySent]).toarray()[0]
-    queryWV = model[querySent]
-
-    result = []
-    for sentence in targetSents:
-        # targetWV = tf.transform([sentence]).toarray()[0]
-        targetWV = model[sentence]
-        result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
-    return result
-
 
 def TrainWord2Vec(trCorpus, modelName):
     modelCBOW = Word2Vec(trCorpus, min_count = 1, vector_size = 100, window = 5)
