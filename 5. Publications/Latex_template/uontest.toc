@@ -1,0 +1,33 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {section}{\numberline {1.1}Citation in Scientific Articles}{1}{}%
+\contentsline {section}{\numberline {1.2}Natural Language Processing}{2}{}%
+\contentsline {section}{\numberline {1.3}Text Embedding and Similarity}{2}{}%
+\contentsline {section}{\numberline {1.4}Semantic Search Engine}{3}{}%
+\contentsline {section}{\numberline {1.5}Study Purpose}{3}{}%
+\contentsline {chapter}{\numberline {2}Literature Review}{5}{}%
+\contentsline {section}{\numberline {2.1}Text Embedding}{5}{}%
+\contentsline {subsubsection}{Bag of Word \& TF-IDF}{5}{}%
+\contentsline {subsubsection}{Latent Semantic Analysis}{6}{}%
+\contentsline {subsubsection}{Word2Vec: Continuous Bag of Word and Skip Gram}{6}{}%
+\contentsline {subsubsection}{Global Vectors for Word Representation}{7}{}%
+\contentsline {subsubsection}{FastText}{8}{}%
+\contentsline {subsubsection}{Recurrent Neural Network}{8}{}%
+\contentsline {subsubsection}{Long-Short Term Memory}{9}{}%
+\contentsline {subsubsection}{Embeddings from Language Model}{10}{}%
+\contentsline {subsubsection}{self-attention}{10}{}%
+\contentsline {subsubsection}{transformer}{11}{}%
+\contentsline {subsubsection}{Universal Sentence Encoder}{12}{}%
+\contentsline {subsubsection}{BERT}{13}{}%
+\contentsline {subsubsection}{Applications of Text Embedding Techniques}{13}{}%
+\contentsline {section}{\numberline {2.2}Text Similarity}{13}{}%
+\contentsline {subsubsection}{Lexical Relation and WordNet}{14}{}%
+\contentsline {section}{\numberline {2.3}Text Embedding for Search Engine}{14}{}%
+\contentsline {section}{\numberline {2.4}Searching-Based Citation Recommendation}{15}{}%
+\contentsline {chapter}{\numberline {3}Material and Method}{17}{}%
+\contentsline {section}{\numberline {3.1}Data Collection}{17}{}%
+\contentsline {section}{\numberline {3.2}Data Structuring}{18}{}%
+\contentsline {section}{\numberline {3.3}Data Preprocessing}{19}{}%
+\contentsline {section}{\numberline {3.4}Experiments}{19}{}%
+\contentsline {subsection}{\numberline {3.4.1}Second Level Heading}{20}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{26}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{27}{}%

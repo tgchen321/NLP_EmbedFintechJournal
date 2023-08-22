@@ -1854,26 +1854,5 @@
     \field{journaltitle}{Scientometrics}
     \field{year}{2022}
   \endentry
-
-  \entry{Lam94}{book}{}
-    \name{author}{1}{}{%
-      {{hash=LL}{%
-         family={Lamport},
-         familyi={L\bibinitperiod},
-         given={Leslie},
-         giveni={L\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Addison-Wesley}%
-    }
-    \strng{namehash}{LL1}
-    \strng{fullhash}{LL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{edition}{Second}
-    \field{title}{{\LaTeX} : A Document Preparation System}
-    \field{year}{1994}
-  \endentry
 \enddatalist
 \endinput

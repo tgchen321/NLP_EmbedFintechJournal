@@ -1,5 +1,5 @@
 \section{Data Collection}
-We use the Web of Science[-citation-] search engine and database to find the fintech articles and their journals.
+We use the Web of Science search engine and database to find the fintech articles and their journals.
 Reference papers were collected by the WOS search engine with rules listed as follows:
 \begin{itemize}
     \item Topic: "\textbf{Fintech}" or "\textbf{Financial technology}" or "\textbf{digital finance}" or "\textbf{electronic banking}" or "\textbf{cryptocurrency}" or "\textbf{Blockchain}"
@@ -8,17 +8,22 @@ Reference papers were collected by the WOS search engine with rules listed as fo
 \end{itemize}
 
 We got 66,974 results on 23rd July 2023 from the Web of Science Core Collection and the top 10 publications with the most article are as follow:
-\begin{table}[]
+
+\begin{table}
 \caption{Table 1. The top 10 publications with the most fintech articles.}
 \centering
-    \begin{tabular}{|lc|lc|}
-    \hline
-    Journal                         & \# of papers & Journal                                      & \# of papers \\ \hline
-    IEEE ACCESS                     & 1342         & APPLIED SCIENCES-BASEL                       & 404          \\
-    SUSTAINABILITY                  & 1207         & ENVIRONMENTAL SCIENCE AND POLLUTION RESEARCH & 377          \\
-    SENSORS                         & 505          & ENERGIES                                     & 374          \\
-    IEEE INTERNET OF THINGS JOURNAL & 489          & ELECTRONICS                                  & 344          \\
-    JOURNAL OF CLEANER PRODUCTION   & 415          & TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE  & 326          \\ \hline
+    \begin{tabular}{lc}
+    Journal                                      & \# of papers \\ \hline
+    IEEE ACCESS                                  & 1342         \\
+    SUSTAINABILITY                               & 1207         \\
+    SENSORS                                      & 505          \\
+    IEEE INTERNET OF THINGS JOURNAL              & 489          \\
+    JOURNAL OF CLEANER PRODUCTION                & 415          \\
+    APPLIED SCIENCES-BASEL                       & 404          \\
+    ENVIRONMENTAL SCIENCE AND POLLUTION RESEARCH & 377          \\
+    ENERGIES                                     & 374          \\
+    ELECTRONICS                                  & 344          \\
+    TECHNOLOGICAL FORECASTING AND SOCIAL CHANGE  & 326         
     \end{tabular}
     \end{table}
 
@@ -48,7 +53,7 @@ The whole dataset is used for unsupervised models, while a 7:3 ratio is applied 
 
 \section{Data Preprocessing}
 Data preprocessing includes every approach to convert the database to the required input of every embedding model.
-Among all the preprocessing steps, \texttt{unidecode} is priorly applied to texts to convert special characters to the closest English characters, such as \textit{\o}, \textit{\^o}, \textit{\~o}, \textit{\=o}, \textit{\'o}, \textit{\u o}, \textit{\v o}, \textit{\oo}, \textit{\oe} and ligature such as \textit{fi}, \textit{fl} and \textit{ff}
+Among all the preprocessing steps, \texttt{unidecode} is priorly applied to texts to convert special characters to the closest English characters, such as \textit{\o}, \textit{\^o}, \textit{\~o}, \textit{\=o}, \textit{\'o}, \textit{\u o}, \textit{\v o} and ligature such as \textit{\ae}, \textit{\oe}, \textit{f\i}, \textit{fl} and \textit{ff}.
 Sentence tokenisation is applied to separate the whole article into sentences basically by the period mark.
 Word tokenisation is applied to sentences that split them into words roughly by space.
 Stop words are removed from the word tokens and lemmatisation is applied to the word tokens to reduce inflected forms of a word into the word's lemma to treat them as a single word since they contain a similar meaning even if they look different.
