@@ -162,7 +162,6 @@ def SimFastText(model, querySent, targetSents):
         result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
     return result
 
-
 def DistilBERT(api_token, querySent, targetSents):
     API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/msmarco-distilbert-base-tas-b"
     headers = {"Authorization": f"Bearer {api_token}"}
