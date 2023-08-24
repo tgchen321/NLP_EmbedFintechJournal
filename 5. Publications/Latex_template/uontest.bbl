@@ -1854,5 +1854,54 @@
     \field{journaltitle}{Scientometrics}
     \field{year}{2022}
   \endentry
+
+  \entry{Gigaword5}{article}{}
+    \name{author}{5}{}{%
+      {{hash=PR}{%
+         family={Parker},
+         familyi={P\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Graff},
+         familyi={G\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kong},
+         familyi={K\bibinitperiod},
+         given={Junbo},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Ke},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MK}{%
+         family={Maeda},
+         familyi={M\bibinitperiod},
+         given={Kazuaki},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PRGDKJ+1}
+    \strng{fullhash}{PRGDKJCKMK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.35111/wk4f-qt80
+    \endverb
+    \field{isbn}{1-58563-581-2}
+    \field{title}{English Gigaword 5th edition LDC2011T07}
+    \verb{url}
+    \verb https://doi.org/10.35111/wk4f-qt80
+    \endverb
+    \field{journaltitle}{Linguistic Data Consortium}
+    \field{year}{2011}
+  \endentry
 \enddatalist
 \endinput

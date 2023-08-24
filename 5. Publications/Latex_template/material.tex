@@ -79,7 +79,7 @@ All of the citation sentences and reference sentences are input together to gene
 
 \subsubsection{2. LSA}
 The \texttt{TruncatedSVD} from \texttt{sklearn} package is used to perform singular vector decomposition on a TF-IDF matrix.
-The \texttt{explained_variance_ratio_} is utilised to decide the number of topics for LSA model.
+The \texttt{explained\_variance\_ratio\_} is utilised to decide the number of topics for LSA model.
 The Bag-Of-Word and TF-IDF matrixes are generated identically in the last section.
 
 \subsubsection{3. Word2Vec}
@@ -94,9 +94,9 @@ A PyTorch-based package \texttt{TorchText} is used to perform the GloVe as a wor
 The 6B word vector is trained on \textit{Wikipedia} 2014 corpus and \textit{English Gigaword Fifth Edition}\cite{Gigaword5}, within 6 billion tokens and 400 billion vocabularies.
 
 \subsubsection{5. FastText}
-The \texttt{train_unsupervised} function from \texttt{FastText} library\footnote{https://fasttext.cc/docs/en/python-module.html}, presented by \textit{Facebook Open Source}, is used to train our financial-specific academic embedding model subword-supporting as a word embedding approach.
+The \texttt{train\_unsupervised} function from \texttt{FastText} library\footnote{https://fasttext.cc/docs/en/python-module.html}, presented by \textit{Facebook Open Source}, is used to train our financial-specific academic embedding model subword-supporting as a word embedding approach.
 The parameters detail and input data for both CBOW and skip-gram methods are identical to the previous section \textit{3. Word2Vec}.
-In this study, we would focus on the word representation tasks, which is the \texttt{train_unsupervised}, instead of the text classification part.
+In this study, we would focus on the word representation tasks, which is the \texttt{train\_unsupervised}, instead of the text classification part.
 
 \subsubsection{6. ELMo}
 A TensorFlow-based library \texttt{simple-elmo} is used to perform word embedding by the pre-trained English ELMo model trained on Wikipedia Dump of October 2019 in a vector size of 1024.
@@ -107,5 +107,14 @@ A pre-trained, DAN-based text embedding model from TensorFlow Hub\footnote{https
 This \texttt{universal-sentence-encoder} is an encoder of greater-than-word length text, applying to sentences, phrases and paragraphs, requires a flexible length of English texts and generates a 512-length vector.
 
 \subsubsection{8. BERT}
-Twp pre-trained variants of BERT are used to serve as sentence embedding approaches, provided on \textit{Hugging Face} as authorised APIs.
-The Distilbert 
+We introduce a base pre-trained BERT model and two fine-tuned variants of BERT models provided by \textit{Hugging Face} to perform word embedding on sentences.
+We choose a case-insensitive base BERT model \texttt{bert-base-uncased}, imported via \texttt{transformer} package, to obtain the embedding word vectors
+
+The first variant of BERT model we use is \texttt{msmarco-distilbert-base-tas-b} transformer, which includes 6 layers of DistilBert and is trained by \textit{Microsoft Machine Reading Comprehension (MS MARCO)}.
+The DistilBert\cite{Hofstaetter2021_tasb_dense_retrieval} is used to reduce the calculation and memory cost, having 40\% fewer parameters and running 60\% faster but keeping 95\% of performance.
+The \textit{MS MARCO} is a large dataset that pays attention to question-answering and passage-ranking tasks, along with the balanced topic-aware sampling (TAS-B) included in the transformer.
+The \texttt{msmarco-distilbert-base-tas-b} embeds texts into 768 dimension vectors and is optimised for semantic search tasks.
+
+The other BERT variant used in this research is \texttt{all-MiniLM-L6-v2}, which is a 6-layer, case-insensitive distilled unified language model (UniLM)\cite{bao2020unilmv2} that can be fine-tuned for natural language understanding (NLU) and natural language generation (NLG) tasks.
+It is fine-tuned by a data collection with over 1 billion sentences and embeds sentences into 384-dimension vectors.
+Both of the BERT variants are applied to our financial data via API requests and serve as sentence embedding approaches.

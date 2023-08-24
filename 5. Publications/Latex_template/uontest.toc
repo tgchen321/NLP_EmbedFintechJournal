@@ -28,6 +28,14 @@
 \contentsline {section}{\numberline {3.2}Data Structuring}{18}{}%
 \contentsline {section}{\numberline {3.3}Data Preprocessing}{19}{}%
 \contentsline {section}{\numberline {3.4}Experiments}{19}{}%
-\contentsline {subsection}{\numberline {3.4.1}Second Level Heading}{20}{}%
-\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{26}{}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{27}{}%
+\contentsline {subsubsection}{1. TF-IDF}{20}{}%
+\contentsline {subsubsection}{2. LSA}{20}{}%
+\contentsline {subsubsection}{3. Word2Vec}{21}{}%
+\contentsline {subsubsection}{4. GloVe}{21}{}%
+\contentsline {subsubsection}{5. FastText}{21}{}%
+\contentsline {subsubsection}{6. ELMo}{21}{}%
+\contentsline {subsubsection}{7. USE}{22}{}%
+\contentsline {subsubsection}{8. BERT}{22}{}%
+\contentsline {subsection}{\numberline {3.4.1}Second Level Heading}{22}{}%
+\contentsline {chapter}{Appendix \numberline {A}Supplementary Materials I}{28}{}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Materials II}{29}{}%
