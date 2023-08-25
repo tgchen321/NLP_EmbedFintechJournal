@@ -39,7 +39,7 @@ The bibliography of the articles is also extracted and the information of each r
 The reference papers extracted from an article are serialised by \texttt{pickle}\footnote{https://docs.python.org/3/library/pickle.html} module to a list of dictionaries.
 The citation sentence can then look up to its corresponding reference paper via the information in this reference dictionary and be matched with the full text.
 The Python tool \texttt{PyMuPDF}\footnote{https://pypi.org/project/PyMuPDF/} is used to obtain the style and location of lines, spans, and sections in a PDF page.
-The patterns including font size, style and colour are set manually and utilised to recognise if the texts in the current span are the main content, bibliography, or non of both.
+The patterns including font size, style and colour are set manually and utilised to recognise if the texts in the current span are the main content, bibliography, or none of both.
 Hence, the design and layout of a journal would highly affect the criteria of the extraction.
 We would have to customise the process of data extraction from one journal to another, which takes a lot of time and effort and we're not yet able to program the automatic recognition.
 
@@ -115,6 +115,6 @@ The DistilBert\cite{Hofstaetter2021_tasb_dense_retrieval} is used to reduce the 
 The \textit{MS MARCO} is a large dataset that pays attention to question-answering and passage-ranking tasks, along with the balanced topic-aware sampling (TAS-B) included in the transformer.
 The \texttt{msmarco-distilbert-base-tas-b} embeds texts into 768 dimension vectors and is optimised for semantic search tasks.
 
-The other BERT variant used in this research is \texttt{all-MiniLM-L6-v2}, which is a 6-layer, case-insensitive distilled unified language model (UniLM)\cite{bao2020unilmv2} that can be fine-tuned for natural language understanding (NLU) and natural language generation (NLG) tasks.
+The other BERT variant used in this research is \texttt{all-MiniLM-L6-v2}, which is a 6-layer, case-insensitive, distilled unified language model (UniLM)\cite{bao2020unilmv2} that can be fine-tuned for natural language understanding (NLU) and natural language generation (NLG) tasks.
 It is fine-tuned by a data collection with over 1 billion sentences and embeds sentences into 384-dimension vectors.
-Both of the BERT variants are applied to our financial data via API requests and serve as sentence embedding approaches.
+Both of the BERT variants are applied to our financial data via API requests and serve as sentence embedding approaches
