@@ -6,7 +6,7 @@ from gensim.corpora import Dictionary
 from gensim.matutils import corpus2dense
 from gensim.models.coherencemodel import CoherenceModel
 from sklearn.decomposition import TruncatedSVD
-import requests
+import requests, math
 import numpy as np
 from matplotlib import pyplot as plt
 import fasttext
@@ -30,7 +30,7 @@ def Tokenise(texts):
         text2sent2word.append(sent2word)
     return text2sent, text2sent2word, text2word
 
-
+### not using anymore
 def TFIDF(fullText, citeSent):
     fullText.append(citeSent)
     dictionary = Dictionary()
@@ -50,6 +50,43 @@ def TFIDF(fullText, citeSent):
         result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
     return result
 
+
+def TrainTFIDF(corpus):
+    dictionary = Dictionary()
+    BoWCorpus = [dictionary.doc2bow(sentence, allow_update=True) for sentence in corpus]
+    num_docs = dictionary.num_docs
+    print("# of sentences: " + str(num_docs))
+    num_terms = len(dictionary.keys())
+    print("# of terms: " + str(num_terms))
+    # TFIDFMatrix = TfidfModel(BoWCorpus)[BoWCorpus]
+    TFIDFMatrix = TfidfModel(BoWCorpus)[BoWCorpus]
+    
+    # denseMatrix = corpus2dense(TFIDFMatrix, num_terms, num_docs).T # sentences * words
+    return TFIDFMatrix, BoWCorpus, dictionary, num_docs, num_terms
+
+
+def ApplyTFIDF(TFIDFMatrix, num_terms, corpus, idList):
+    counter = 0
+    batchResult = []
+    for dataN in range(len(idList)):
+        targetID = idList[dataN]["fullText"]
+        queryID = idList[dataN]["citeSent"][0]
+
+        if len(corpus[queryID]) == 0: continue
+        queryWV = corpus2dense([TFIDFMatrix[queryID]], num_terms, 1).T
+
+        result = []
+        for id in targetID:
+            if len(corpus[id]) == 0: continue
+            targetWV = corpus2dense([TFIDFMatrix[id]], num_terms, 1)
+            tmp = np.dot(queryWV, targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV))
+            result.append(tmp[0][0])
+            counter += 1
+        batchResult.append(Top10Avg(result))
+    print (str(counter) + " pairs of citation sentence-reference sentence")
+    return batchResult
+
+### not using anymore
 def LSA(fullText, citeSent):
     fullText.append(citeSent)
     dictionary = Dictionary(fullText)
@@ -91,6 +128,43 @@ def LSA(fullText, citeSent):
     for targetWV in denseMatrix[0:-1]: 
         result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
     return result
+
+def ApplyLSA(corpus, TFIDFMatrix, dictionary, num_docs, num_terms):
+    # validation = []
+    # num_topic = 0
+    # x = range(1, min(num_docs, num_terms))
+    # for n in x:
+    #     svd = TruncatedSVD(n_components=n).fit(TFIDFMatrix)
+    #     rf = svd.explained_variance_ratio_.sum()
+    #     validation.append(rf)
+    #     if rf >= 0.9 and num_topic == 0:
+    #         num_topic = n
+
+    # plt.plot(x, validation)
+    # plt.xlabel("Number of Topics")
+    # plt.legend(("explained variance ratio"), loc='best')
+    # plt.show()
+
+    lsamodel = LsiModel(TFIDFMatrix, num_topics=400, id2word = dictionary)
+    save the model
+    # print(lsamodel.print_topics(num_topics=400, num_words=num_terms))
+    # coherenceScore = CoherenceModel(model=lsamodel, texts=corpus, dictionary=dictionary, coherence='c_v').get_coherence()
+    # print("Coherence Score: " + str(coherenceScore))
+
+    svdMatrix = lsamodel[TFIDFMatrix]
+    print(svdMatrix.shape)
+    print(lsamodel.projection.u.shape)
+    print(lsamodel.projection.s.shape)
+    # denseMatrix = corpus2dense(svdMatrix, num_terms, num_docs).T
+    # queryWV = denseMatrix[-1]
+    # print(queryWV.shape)
+
+    # result = []
+    # for targetWV in denseMatrix[0:-1]: 
+    #     result.append(queryWV.dot(targetWV) / (np.linalg.norm(queryWV) * np.linalg.norm(targetWV)))
+    # return result
+
+
 
 def TrainWord2Vec(trCorpus, modelName):
     modelCBOW = Word2Vec(trCorpus, min_count = 1, vector_size = 100, window = 5)
@@ -188,3 +262,10 @@ def miniLMBERT(api_token, querySent, targetSents):
     print("Query: " + querySent)
     print("...Compare to " + str(len(targetSents)) + " sentences...")
     return query(parameters)
+
+
+def Top10Avg(result):
+    result.sort(reverse = True)
+    top10 = math.ceil(len(result)/10)
+    top10avg = sum(result[:top10])/top10
+    return top10avg
